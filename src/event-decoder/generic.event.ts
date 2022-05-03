@@ -1,0 +1,41 @@
+import { Address } from '@elrondnetwork/erdjs/out';
+import BigNumber from 'bignumber.js';
+import { GenericEventType } from './generic.types';
+import { RawEvent } from './raw.event';
+
+export class GenericEvent extends RawEvent {
+    protected caller: Address | undefined;
+    protected block: BigNumber | undefined;
+    protected epoch: BigNumber | undefined;
+    protected timestamp: BigNumber | undefined;
+
+    constructor(init?: Partial<RawEvent>) {
+        super(init);
+
+        if (init) {
+            Object.assign(this, init);
+        }
+    }
+
+    getAddress(): string | undefined {
+        return this.address;
+    }
+
+    getIdentifier(): string | undefined {
+        return this.identifier;
+    }
+
+    getTimestamp(): BigNumber | undefined {
+        return this.timestamp;
+    }
+
+    toJSON(): GenericEventType {
+        return {
+            address: this.address,
+            caller: this.caller?.toString(),
+            block: this.block?.toNumber(),
+            epoch: this.epoch?.toNumber(),
+            timestamp: this.timestamp?.toNumber(),
+        };
+    }
+}
