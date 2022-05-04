@@ -1,10 +1,11 @@
 import {
     BigUIntType,
+    BinaryCodec,
     FieldDefinition,
     StructType,
     TokenIdentifierType,
     U64Type,
-} from '@elrondnetwork/erdjs/out';
+} from '@elrondnetwork/erdjs';
 import { WrappedLpAttributesType } from './attributes.types';
 
 export class WrappedLpTokenAttributes {
@@ -26,6 +27,16 @@ export class WrappedLpTokenAttributes {
             lockedAssetsInvested: this.lockedAssetsInvested,
             lockedAssetsNonce: this.lockedAssetsNonce,
         };
+    }
+
+    static fromAttributes(attributes: string): WrappedLpTokenAttributes {
+        const attributesBuffer = Buffer.from(attributes, 'base64');
+        const codec = new BinaryCodec();
+        const structType = WrappedLpTokenAttributes.getStructure();
+        const [decoded] = codec.decodeNested(attributesBuffer, structType);
+        return WrappedLpTokenAttributes.fromDecodedAttributes(
+            decoded.valueOf(),
+        );
     }
 
     static fromDecodedAttributes(
