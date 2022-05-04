@@ -1,17 +1,18 @@
 import {
     BigUIntType,
+    BinaryCodec,
     BooleanType,
     FieldDefinition,
     StructType,
     U64Type,
     U8Type,
-} from '@elrondnetwork/erdjs/out';
+} from '@elrondnetwork/erdjs';
 import { FarmVersion } from '../event-decoder/generic.types';
 import { FarmTokenAttributesType } from './attributes.types';
 
 export class FarmTokenAttributes {
-    identifier?: string | undefined;
-    attributes?: string | undefined;
+    identifier: string | undefined;
+    attributes: string | undefined;
     rewardPerShare: string | undefined;
     originalEnteringEpoch: number | undefined;
     enteringEpoch: number | undefined;
@@ -39,8 +40,8 @@ export class FarmTokenAttributes {
     }
 
     static fromDecodedAttributes(
-        decodedAttributes: any,
         version: FarmVersion,
+        decodedAttributes: any,
     ): FarmTokenAttributes {
         return new FarmTokenAttributes({
             rewardPerShare: decodedAttributes.rewardPerShare.toString(),
@@ -60,6 +61,22 @@ export class FarmTokenAttributes {
             compoundedReward: decodedAttributes.compoundedReward.toFixed(),
             currentFarmAmount: decodedAttributes.currentFarmAmount.toFixed(),
         });
+    }
+
+    static fromAttributes(
+        version: FarmVersion,
+        attributes: string,
+    ): FarmTokenAttributes {
+        const attributesBuffer = Buffer.from(attributes, 'base64');
+        const codec = new BinaryCodec();
+
+        const structType = FarmTokenAttributes.getStructure(version);
+        const [decoded] = codec.decodeNested(attributesBuffer, structType);
+
+        return FarmTokenAttributes.fromDecodedAttributes(
+            version,
+            decoded.valueOf(),
+        );
     }
 
     static getStructure(version: FarmVersion): StructType {

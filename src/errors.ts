@@ -29,3 +29,9 @@ export class ErrInvalidDataField extends Err {
         super(`Invalid data field: ${message}`);
     }
 }
+
+export class ErrInvalidAttributesField extends Err {
+    constructor(message: string) {
+        super(`Invalid attributes field: ${message}`);
+    }
+}
