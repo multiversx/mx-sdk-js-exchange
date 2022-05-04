@@ -17,7 +17,7 @@ export class EsdtTokenTopics {
         ).toFixed();
     }
 
-    toPlainObject() {
+    toJSON() {
         return {
             tokenID: this.tokenID,
             amount: this.amount,

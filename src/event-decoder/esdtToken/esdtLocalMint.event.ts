@@ -10,6 +10,6 @@ export class EsdtLocalMintEvent extends RawEvent {
     }
 
     getTopics() {
-        return this.decodedTopics.toPlainObject();
+        return this.decodedTopics.toJSON();
     }
 }
