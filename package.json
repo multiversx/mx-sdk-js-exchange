@@ -1,13 +1,14 @@
 {
     "name": "@elrondnetwork/elrond-sdk-erdjs-dex",
     "version": "0.0.1",
-    "description": "",
+    "description": "Utililities modules for Maiar Exchange interactions",
     "author": "ElrondNetwork",
     "license": "MIT",
     "files": [
         "dist/**/*"
     ],
     "main": "dist/index.js",
+    "types": "dist/index.d.ts",
     "scripts": {
         "compile": "tsc -p tsconfig.json",
         "prepare": "npm run compile",
