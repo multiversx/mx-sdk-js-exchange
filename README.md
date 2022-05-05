@@ -4,14 +4,14 @@ Utilities modules for Maiar Exchange interactions
 
 ## Distribution
 
-[npm](https://www.npmjs.com/package/@elrondnetwork/erdjs-sdk-erdjs-dex)
+[npm](https://www.npmjs.com/package/@elrondnetwork/erdjs-dex)
 
 ## Installation
 
-`erdjs-sdk-erdjs-dex` is delivered via [npm](https://www.npmjs.com/package/@elrondnetwork/erdjs-sdk-erdjs-dex), therefore it can be installed as follows:
+`erdjs-dex` is delivered via [npm](https://www.npmjs.com/package/@elrondnetwork/erdjs-dex), therefore it can be installed as follows:
 
 ```
-npm install @elrondnetwork/erdjs-sdk-erdjs-dex
+npm install @elrondnetwork/erdjs-dex
 ```
 
 ### Building the library

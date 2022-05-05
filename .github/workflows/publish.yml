@@ -22,7 +22,7 @@ jobs:
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
               run: |
-                  echo " - [npmjs](https://github.com/ElrondNetwork/elrond-sdk-erdjs-dex)" >> notes.txt
+                  echo " - [npmjs](https://www.npmjs.com/package/@elrondnetwork/erdjs-dex)" >> notes.txt
                   echo "" >> notes.txt
 
                   RELEASE_TAG=v$(node -p "require('./package.json').version")
