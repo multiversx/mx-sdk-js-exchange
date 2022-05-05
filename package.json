@@ -3,6 +3,10 @@
     "version": "0.0.1",
     "description": "Utililities modules for Maiar Exchange interactions",
     "author": "ElrondNetwork",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ElrondNetwork/elrond-sdk-erdjs-dex.git"
+    },
     "license": "MIT",
     "files": [
         "dist/**/*"
