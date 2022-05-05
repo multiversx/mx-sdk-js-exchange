@@ -4,7 +4,7 @@ import {
     StructType,
     TokenIdentifierType,
     U64Type,
-} from '@elrondnetwork/erdjs/out';
+} from '@elrondnetwork/erdjs';
 import { WrappedFarmAttributesType } from './attributes.types';
 import { FarmTokenAttributes } from './farm.token';
 

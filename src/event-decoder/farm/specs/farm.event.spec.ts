@@ -238,7 +238,6 @@ describe('test farm v1.3 event decoders', () => {
             FarmVersion.V1_3,
             rawClaimRewardsEventV1_3,
         );
-        console.log(claimRewardsEvent.toJSON());
         expect(claimRewardsEvent.toJSON()).toEqual({
             address:
                 'erd1qqqqqqqqqqqqqpgqnqvjnn4haygsw2hls2k9zjjadnjf9w7g2jpsmc60a4',
