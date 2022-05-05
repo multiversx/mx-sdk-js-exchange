@@ -48,8 +48,8 @@ export class EnterFarmEvent extends GenericEvent {
             amount: new BigNumber(0),
         });
         this.farmAttributes = FarmTokenAttributes.fromDecodedAttributes(
-            decodedEvent.farmAttributes,
             version,
+            decodedEvent.farmAttributes,
         );
     }
 
