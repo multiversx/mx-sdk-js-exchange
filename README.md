@@ -1,6 +1,6 @@
 # Elrond SDK for JavaScript: Maiar Exchange utilities
 
-Utililities modules for Maiar Exchange interactions
+Utilities modules for Maiar Exchange interactions
 
 ## Distribution
 

@@ -47,8 +47,8 @@ export class ExitFarmEvent extends GenericEvent {
             amount: decodedEvent.rewardTokenAmount,
         });
         this.farmAttributes = FarmTokenAttributes.fromDecodedAttributes(
-            decodedEvent.farmAttributes,
             version,
+            decodedEvent.farmAttributes,
         );
     }
 

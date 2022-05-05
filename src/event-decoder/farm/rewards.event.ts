@@ -50,12 +50,12 @@ export class RewardsEvent extends GenericEvent {
             amount: decodedEvent.rewardTokenAmount,
         });
         this.oldFarmAttributes = FarmTokenAttributes.fromDecodedAttributes(
-            decodedEvent.oldFarmAttributes,
             version,
+            decodedEvent.oldFarmAttributes,
         );
         this.newFarmAttributes = FarmTokenAttributes.fromDecodedAttributes(
-            decodedEvent.newFarmAttributes,
             version,
+            decodedEvent.newFarmAttributes,
         );
     }
 

@@ -1,7 +1,7 @@
 export class RawEvent {
     address: string | undefined;
     identifier: string | undefined;
-    topics = [];
+    topics: string[] = [];
     data: string | undefined;
 
     constructor(init?: Partial<RawEvent>) {

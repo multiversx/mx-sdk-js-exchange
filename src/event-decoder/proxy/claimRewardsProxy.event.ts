@@ -19,7 +19,6 @@ export class ClaimRewardsProxyEvent extends RewardsProxyEvent {
     constructor(init?: Partial<GenericEvent>) {
         super(init);
         const decodedEvent = this.decodeEvent();
-        Object.assign(this, decodedEvent);
         this.rewardToken = new GenericToken({
             tokenID: decodedEvent.rewardTokenID.toString(),
             nonce: decodedEvent.rewardTokenNonce,
