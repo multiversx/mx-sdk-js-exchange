@@ -1,6 +1,5 @@
-import { Address, BinaryCodec } from '@elrondnetwork/erdjs/out';
+import { Address, BinaryCodec, OptionType } from '@elrondnetwork/erdjs/out';
 import { ErrInvalidDataField } from '../../errors';
-import { GenericEvent } from '../generic.event';
 import { RawEvent } from '../raw.event';
 import { MetabondingEventTopics } from './metabonding.event.topics';
 import { MetabondingEventType } from './metabonding.types';
@@ -16,13 +15,22 @@ export class MetabondingEvent extends RawEvent {
         super(init);
         Object.assign(this, init);
         this.decodedTopics = new MetabondingEventTopics(this.topics);
-        const decodedEvent = this.decodeEvent();
-        this.userEntry = new UserEntry({
-            tokenNonce: decodedEvent.tokenNonce.toNumber(),
-            stakedAmount: decodedEvent.stakeAmount.toFixed(),
-            unstakedAmount: decodedEvent.unstakeAmount.toFixed(),
-            unbondEpoch: decodedEvent.unbondEpoch.toNumber(),
-        });
+
+        if (this.data != '') {
+            const decodedEvent = this.decodeEvent();
+            this.userEntry = new UserEntry({
+                tokenNonce: decodedEvent.tokenNonce.toNumber(),
+                stakedAmount: decodedEvent.stakeAmount.toFixed(),
+                unstakedAmount: decodedEvent.unstakeAmount.toFixed(),
+                unbondEpoch: decodedEvent.unbondEpoch.toNumber(),
+            });
+        } else {
+            this.userEntry = new UserEntry({
+                tokenNonce: 0,
+                stakedAmount: '0',
+                unstakedAmount: '0',
+            });
+        }
     }
 
     getTopics(): MetabondingEventTopics {
@@ -49,7 +57,13 @@ export class MetabondingEvent extends RawEvent {
 
         const data = Buffer.from(this.data, 'base64');
         const codec = new BinaryCodec();
-        const [decoded] = codec.decodeNested(data, UserEntry.getStructure());
+
+        const decodingType =
+            this.identifier === 'unbond'
+                ? new OptionType(UserEntry.getStructure())
+                : UserEntry.getStructure();
+
+        const [decoded] = codec.decodeNested(data, decodingType);
         return decoded.valueOf();
     }
 }
