@@ -7,7 +7,7 @@ import {
     TokenIdentifierType,
     U64Type,
 } from '@elrondnetwork/erdjs/out';
-import { WrappedFarmTokenAttributes } from '../../attributes-decoder/wrappedFarm.token';
+import { WrappedFarmTokenAttributes } from '../../attributes-decoder/proxy/wrappedFarm.token';
 import { GenericToken } from '../../generic.token';
 import { GenericEvent } from '../generic.event';
 import { RewardsProxyEvent } from './rewardsProxy.event';

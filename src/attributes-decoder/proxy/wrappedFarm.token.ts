@@ -5,8 +5,8 @@ import {
     TokenIdentifierType,
     U64Type,
 } from '@elrondnetwork/erdjs';
-import { WrappedFarmAttributesType } from './attributes.types';
-import { FarmTokenAttributes } from './farm.token';
+import { WrappedFarmAttributesType } from './proxy.token.types';
+import { FarmTokenAttributes } from '../farm/farm.token';
 
 export class WrappedFarmTokenAttributes {
     identifier: string | undefined;
