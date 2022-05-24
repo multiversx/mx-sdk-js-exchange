@@ -7,8 +7,8 @@ import {
     U64Type,
     U8Type,
 } from '@elrondnetwork/erdjs';
-import { FarmVersion } from '../event-decoder/generic.types';
-import { FarmTokenAttributesType } from './attributes.types';
+import { FarmVersion } from '../../event-decoder/generic.types';
+import { FarmTokenAttributesType } from './farm.token.types';
 
 export class FarmTokenAttributes {
     identifier: string | undefined;
