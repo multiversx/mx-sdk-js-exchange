@@ -1,4 +1,4 @@
-import { FarmTokenAttributesType } from '../../attributes-decoder/attributes.types';
+import { FarmTokenAttributesType } from '../../attributes-decoder/farm/farm.token.types';
 import { GenericTokenType } from '../../generic.token';
 import { GenericEventType } from '../generic.types';
 

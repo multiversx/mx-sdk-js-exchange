@@ -1,4 +1,4 @@
-import { WrappedLpAttributesType } from '../../attributes-decoder/attributes.types';
+import { WrappedLpAttributesType } from '../../attributes-decoder/proxy/proxy.token.types';
 import { GenericTokenType } from '../../generic.token';
 import { GenericEventType } from '../generic.types';
 
