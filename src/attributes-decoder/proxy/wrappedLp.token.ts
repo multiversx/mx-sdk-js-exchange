@@ -6,7 +6,7 @@ import {
     TokenIdentifierType,
     U64Type,
 } from '@elrondnetwork/erdjs';
-import { WrappedLpAttributesType } from './attributes.types';
+import { WrappedLpAttributesType } from './proxy.token.types';
 
 export class WrappedLpTokenAttributes {
     identifier: string | undefined;

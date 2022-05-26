@@ -9,7 +9,7 @@ import {
     U64Type,
 } from '@elrondnetwork/erdjs/out';
 import BigNumber from 'bignumber.js';
-import { FarmTokenAttributes } from '../../attributes-decoder/farm.token';
+import { FarmTokenAttributes } from '../../attributes-decoder';
 import { ErrInvalidDataField } from '../../errors';
 import { GenericToken } from '../../generic.token';
 import { GenericEvent } from '../generic.event';

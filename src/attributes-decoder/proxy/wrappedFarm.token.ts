@@ -1,12 +1,12 @@
 import {
     BigUIntType,
+    BinaryCodec,
     FieldDefinition,
     StructType,
     TokenIdentifierType,
     U64Type,
 } from '@elrondnetwork/erdjs';
-import { WrappedFarmAttributesType } from './attributes.types';
-import { FarmTokenAttributes } from './farm.token';
+import { WrappedFarmAttributesType } from './proxy.token.types';
 
 export class WrappedFarmTokenAttributes {
     identifier: string | undefined;
@@ -15,7 +15,6 @@ export class WrappedFarmTokenAttributes {
     farmTokenNonce: number | undefined;
     farmTokenAmount: string | undefined;
     farmTokenIdentifier: string | undefined;
-    farmTokenAttributes: FarmTokenAttributes | undefined;
     farmingTokenID: string | undefined;
     farmingTokenNonce: number | undefined;
     farmingTokenAmount: string | undefined;
@@ -46,6 +45,16 @@ export class WrappedFarmTokenAttributes {
             farmingTokenNonce: decodedAttributes.farmingTokenNonce.toNumber(),
             farmingTokenAmount: decodedAttributes.farmingTokenAmount.toFixed(),
         });
+    }
+
+    static fromAttributes(attributes: string): WrappedFarmTokenAttributes {
+        const attributesBuffer = Buffer.from(attributes, 'base64');
+        const codec = new BinaryCodec();
+        const structType = WrappedFarmTokenAttributes.getStructure();
+        const [decoded] = codec.decodeNested(attributesBuffer, structType);
+        return WrappedFarmTokenAttributes.fromDecodedAttributes(
+            decoded.valueOf(),
+        );
     }
 
     static getStructure() {

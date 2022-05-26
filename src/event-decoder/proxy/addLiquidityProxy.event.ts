@@ -10,7 +10,7 @@ import {
 import { GenericEvent } from '../generic.event';
 import { PairProxyEvent } from './pairProxy.event';
 import { AddLiquidityProxyEventType } from './pair.proxy.types';
-import { WrappedLpTokenAttributes } from '../../attributes-decoder/wrappedLp.token';
+import { WrappedLpTokenAttributes } from '../../attributes-decoder/proxy/wrappedLp.token';
 
 export class AddLiquidityProxyEvent extends PairProxyEvent {
     private createdWithMerge: boolean | undefined;

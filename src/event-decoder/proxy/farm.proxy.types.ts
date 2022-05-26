@@ -1,4 +1,4 @@
-import { WrappedFarmAttributesType } from '../../attributes-decoder/attributes.types';
+import { WrappedFarmAttributesType } from '../../attributes-decoder/proxy/proxy.token.types';
 import { GenericTokenType } from '../../generic.token';
 import { GenericEventType } from '../generic.types';
 

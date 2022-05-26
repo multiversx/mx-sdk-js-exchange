@@ -7,7 +7,7 @@ import {
     TokenIdentifierType,
     U64Type,
 } from '@elrondnetwork/erdjs/out';
-import { WrappedLpTokenAttributes } from '../../attributes-decoder/wrappedLp.token';
+import { WrappedLpTokenAttributes } from '../../attributes-decoder/proxy/wrappedLp.token';
 import { ErrInvalidDataField } from '../../errors';
 import { GenericToken } from '../../generic.token';
 import { GenericEvent } from '../generic.event';
