@@ -36,6 +36,14 @@ export class SwapNoFeeEvent extends GenericEvent {
         });
     }
 
+    getTokenIn(): GenericToken | undefined {
+        return this.tokenIn;
+    }
+
+    getTokenOut(): GenericToken | undefined {
+        return this.tokenOut;
+    }
+
     getTokenAmountOut(): GenericToken | undefined {
         return this.tokenOut;
     }
