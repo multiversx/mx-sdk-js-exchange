@@ -16,7 +16,7 @@ export class MetabondingEvent extends RawEvent {
         Object.assign(this, init);
         this.decodedTopics = new MetabondingEventTopics(this.topics);
 
-        if (!this.data) {
+        if (this.data != '') {
             const decodedEvent = this.decodeEvent();
             this.userEntry = new UserEntry({
                 tokenNonce: decodedEvent.tokenNonce.toNumber(),
