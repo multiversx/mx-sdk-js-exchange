@@ -12,5 +12,5 @@ export type StakingFarmTokenAttributesType = {
 
 export type UnbondFarmTokenAttributesType = {
     type: StakingFarmTokenType;
-    remainingEpochs: number | undefined;
+    unlockEpoch: number | undefined;
 };
