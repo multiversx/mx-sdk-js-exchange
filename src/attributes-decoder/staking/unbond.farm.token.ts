@@ -11,7 +11,7 @@ import {
 
 export class UnbondFarmTokenAttributes {
     type = StakingFarmTokenType.UNBOND_FARM_TOKEN;
-    remainingEpochs: number | undefined;
+    unlockEpoch: number | undefined;
 
     constructor(init?: Partial<UnbondFarmTokenAttributes>) {
         Object.assign(this, init);
@@ -20,7 +20,7 @@ export class UnbondFarmTokenAttributes {
     toJSON(): UnbondFarmTokenAttributesType {
         return {
             type: this.type,
-            remainingEpochs: this.remainingEpochs,
+            unlockEpoch: this.unlockEpoch,
         };
     }
 
@@ -28,7 +28,7 @@ export class UnbondFarmTokenAttributes {
         decodedAttributes: any,
     ): UnbondFarmTokenAttributes {
         return new UnbondFarmTokenAttributes({
-            remainingEpochs: decodedAttributes.remainingEpochs.toNumber(),
+            unlockEpoch: decodedAttributes.unlockEpoch.toNumber(),
         });
     }
 
@@ -38,7 +38,9 @@ export class UnbondFarmTokenAttributes {
 
         const structType = UnbondFarmTokenAttributes.getStructure();
         const [decoded] = codec.decodeNested(attributesBuffer, structType);
-        return UnbondFarmTokenAttributes.fromDecodedAttributes(decoded);
+        return UnbondFarmTokenAttributes.fromDecodedAttributes(
+            decoded.valueOf(),
+        );
     }
 
     static getStructure(): StructType {
