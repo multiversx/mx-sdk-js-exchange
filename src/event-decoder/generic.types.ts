@@ -39,6 +39,7 @@ export enum METABONDING_EVENTS {
 
 export enum ROUTER_EVENTS {
     CREATE_PAIR = 'createPair',
+    PAIR_SWAP_ENABLED = 'setSwapEnabledByUser',
 }
 
 export enum ESDT_EVENTS {

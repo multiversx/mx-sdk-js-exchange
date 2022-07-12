@@ -1,48 +1,68 @@
 import {
+    Address,
     AddressType,
     BinaryCodec,
     FieldDefinition,
     StructType,
     TokenIdentifierType,
-    U64Type,
 } from '@elrondnetwork/erdjs/out';
 import { ErrInvalidDataField } from '../../errors';
 import { GenericEvent } from '../generic.event';
+import { RawEvent } from '../raw.event';
 import { RouterEventTopics } from './createPair.topics';
-import { CreatePairEventType } from './router.types';
+import { PairSwapEnableEventType } from './router.types';
 
-export class CreatePairEvent extends GenericEvent {
+export class PairSwapEnabledEvent extends RawEvent {
     private decodedTopics: RouterEventTopics;
 
-    private firstTokenID: string | undefined;
-    private secondTokenID: string | undefined;
-    private totalFeePercent: number | undefined;
-    private specialFeePercent: number | undefined;
+    private readonly caller: Address;
+    private readonly firstTokenID: string;
+    private readonly secondTokenID: string;
+    private readonly pairAddress: Address;
 
     constructor(init?: Partial<GenericEvent>) {
         super(init);
         this.decodedTopics = new RouterEventTopics(this.topics);
         const decodedEvent = this.decodeEvent();
-        Object.assign(this, decodedEvent);
+
+        this.caller = new Address(decodedEvent.caller);
+        this.firstTokenID = decodedEvent.firstTokenID;
+        this.secondTokenID = decodedEvent.secondTokenID;
+        this.pairAddress = new Address(decodedEvent.pairAddress);
+    }
+
+    toJSON(): PairSwapEnableEventType {
+        return {
+            caller: this.caller.bech32(),
+            firstTokenID: this.firstTokenID,
+            secondTokenID: this.secondTokenID,
+            pairAddress: this.pairAddress.bech32(),
+        };
     }
 
     getTopics() {
         return this.decodedTopics.toJSON();
     }
 
-    toJSON(): CreatePairEventType {
-        return {
-            ...super.toJSON(),
-            firstTokenID: this.firstTokenID,
-            secondTokenID: this.secondTokenID,
-            totalFeePercent: this.totalFeePercent,
-            specialFeePercent: this.specialFeePercent,
-        };
+    getCaller(): Address {
+        return this.caller;
+    }
+
+    getFirstTokenID(): string {
+        return this.firstTokenID;
+    }
+
+    getSecondTokenID(): string {
+        return this.secondTokenID;
+    }
+
+    getPairAddress(): Address {
+        return this.pairAddress;
     }
 
     private decodeEvent() {
         if (this.data == undefined) {
-            throw new ErrInvalidDataField(CreatePairEvent.name);
+            throw new ErrInvalidDataField(PairSwapEnabledEvent.name);
         }
 
         const data = Buffer.from(this.data, 'base64');
@@ -59,12 +79,7 @@ export class CreatePairEvent extends GenericEvent {
             new FieldDefinition('caller', '', new AddressType()),
             new FieldDefinition('firstTokenID', '', new TokenIdentifierType()),
             new FieldDefinition('secondTokenID', '', new TokenIdentifierType()),
-            new FieldDefinition('totalFeePercent', '', new U64Type()),
-            new FieldDefinition('specialFeePercent', '', new U64Type()),
-            new FieldDefinition('address', '', new AddressType()),
-            new FieldDefinition('block', '', new U64Type()),
-            new FieldDefinition('epoch', '', new U64Type()),
-            new FieldDefinition('timestamp', '', new U64Type()),
+            new FieldDefinition('pairAddress', '', new AddressType()),
         ]);
     }
 }
