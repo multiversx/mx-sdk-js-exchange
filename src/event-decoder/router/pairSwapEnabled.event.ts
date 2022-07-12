@@ -24,9 +24,7 @@ export class PairSwapEnabledEvent extends RawEvent {
         super(init);
         this.decodedTopics = new RouterEventTopics(this.topics);
         const decodedEvent = this.decodeEvent();
-        console.log({
-            decodedEvent,
-        });
+
         this.caller = new Address(decodedEvent.caller);
         this.firstTokenID = decodedEvent.firstTokenID;
         this.secondTokenID = decodedEvent.secondTokenID;
