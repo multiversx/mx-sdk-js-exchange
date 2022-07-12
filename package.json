@@ -1,6 +1,6 @@
 {
     "name": "@elrondnetwork/erdjs-dex",
-    "version": "0.0.6",
+    "version": "0.0.7",
     "description": "Utililities modules for Maiar Exchange interactions",
     "author": "ElrondNetwork",
     "repository": {
