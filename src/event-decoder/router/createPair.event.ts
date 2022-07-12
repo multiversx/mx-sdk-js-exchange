@@ -9,7 +9,7 @@ import {
 import { ErrInvalidDataField } from '../../errors';
 import { GenericEvent } from '../generic.event';
 import { RouterEventTopics } from './createPair.topics';
-import { CreatePairEventType } from './createPair.types';
+import { CreatePairEventType } from './router.types';
 
 export class CreatePairEvent extends GenericEvent {
     private decodedTopics: RouterEventTopics;
