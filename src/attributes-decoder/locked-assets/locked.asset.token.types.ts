@@ -1,9 +1,9 @@
 export type UnlockMilestoneType = {
-    epoch: number | undefined;
-    percent: number | undefined;
+    epoch: number;
+    percent: number;
 };
 
 export type LockedAssetAttributesType = {
-    unlockSchedule: UnlockMilestoneType[] | undefined;
-    isMerged: boolean | undefined;
+    unlockSchedule: UnlockMilestoneType[];
+    isMerged: boolean;
 };

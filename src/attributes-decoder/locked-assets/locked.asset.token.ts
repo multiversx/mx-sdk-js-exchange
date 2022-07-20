@@ -14,32 +14,34 @@ import {
 } from './locked.asset.token.types';
 
 export class UnlockMilestone {
-    private epoch: BigNumber | undefined;
-    private percent: BigNumber | undefined;
+    epoch: BigNumber;
+    percent: BigNumber;
 
-    constructor(init?: Partial<UnlockMilestone>) {
-        Object.assign(this, init);
+    constructor(epoch: BigNumber, percent: BigNumber) {
+        this.epoch = epoch;
+        this.percent = percent;
     }
 
     toJSON(): UnlockMilestoneType {
         return {
-            epoch: this.epoch?.toNumber(),
-            percent: this.percent?.toNumber(),
+            epoch: this.epoch.toNumber(),
+            percent: this.percent.toNumber(),
         };
     }
 }
 
 export class LockedAssetAttributes {
-    unlockSchedule: UnlockMilestone[] | undefined;
-    isMerged: boolean | undefined;
+    unlockSchedule: UnlockMilestone[];
+    isMerged: boolean;
 
-    constructor(init?: Partial<LockedAssetAttributes>) {
-        Object.assign(this, init);
+    constructor(unlockSchedule: UnlockMilestone[], isMerged: boolean) {
+        this.unlockSchedule = unlockSchedule;
+        this.isMerged = isMerged;
     }
 
     toJSON(): LockedAssetAttributesType {
-        const unlockScheduleType: UnlockMilestoneType[] | undefined =
-            this.unlockSchedule?.map((unlockMilestone) =>
+        const unlockScheduleType: UnlockMilestoneType[] =
+            this.unlockSchedule.map((unlockMilestone) =>
                 unlockMilestone.toJSON(),
             );
 
@@ -52,10 +54,23 @@ export class LockedAssetAttributes {
     static fromDecodedAttributes(
         decodedAttributes: any,
     ): LockedAssetAttributes {
-        return new LockedAssetAttributes({
-            unlockSchedule: decodedAttributes.unlockSchedule.valueOf(),
-            isMerged: decodedAttributes.isMerged,
-        });
+        const unlockSchedule: UnlockMilestone[] =
+            decodedAttributes.unlockSchedule
+                .valueOf()
+                .map(
+                    (rawUnlockMilestone: {
+                        epoch: BigNumber;
+                        percent: BigNumber;
+                    }) =>
+                        new UnlockMilestone(
+                            rawUnlockMilestone.epoch,
+                            rawUnlockMilestone.percent,
+                        ),
+                );
+        return new LockedAssetAttributes(
+            unlockSchedule,
+            decodedAttributes.isMerged,
+        );
     }
 
     static fromAttributes(
