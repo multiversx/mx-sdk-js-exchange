@@ -53,6 +53,10 @@ export enum PRICE_DISCOVERY_EVENTS {
     REDEEM = 'redeem',
 }
 
+export enum SIMPLE_LOCK_ENERGY_EVENTS {
+    ENERGY_UPDATED = 'energyUpdated',
+}
+
 export type GenericEventType = {
     address: string | undefined;
     caller: string | undefined;
