@@ -10,12 +10,12 @@ import { EnergyType } from './energy.type';
 
 export class Energy {
     amount: BigNumber;
-    lastUpdateEpoch: number;
+    lastUpdateEpoch: BigNumber;
     totalLockedTokens: BigNumber;
 
     constructor(init: {
         amount: BigNumber;
-        lastUpdateEpoch: number;
+        lastUpdateEpoch: BigNumber;
         totalLockedTokens: BigNumber;
     }) {
         this.amount = init.amount;
@@ -26,7 +26,7 @@ export class Energy {
     toJSON(): EnergyType {
         return {
             amount: this.amount.toFixed(),
-            lastUpdateEpoch: this.lastUpdateEpoch,
+            lastUpdateEpoch: this.lastUpdateEpoch.toNumber(),
             totalLockedTokens: this.totalLockedTokens.toFixed(),
         };
     }
