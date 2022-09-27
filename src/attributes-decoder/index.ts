@@ -4,3 +4,4 @@ export * from './proxy';
 export * from './staking';
 export * from './staking-proxy';
 export * from './simple-lock';
+export * from './energy';
