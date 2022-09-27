@@ -1,6 +1,6 @@
 {
     "name": "@elrondnetwork/erdjs-dex",
-    "version": "0.0.8",
+    "version": "0.0.9",
     "description": "Utililities modules for Maiar Exchange interactions",
     "author": "ElrondNetwork",
     "repository": {
@@ -32,7 +32,7 @@
         "typescript": "4.6.4"
     },
     "dependencies": {
-        "@elrondnetwork/erdjs": "10.1.2",
+        "@elrondnetwork/erdjs": "^11.1.0",
         "bignumber.js": "9.0.1"
     }
 }
