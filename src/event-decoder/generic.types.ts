@@ -49,7 +49,7 @@ export enum ESDT_EVENTS {
 
 export enum PRICE_DISCOVERY_EVENTS {
     DEPOSIT = 'deposit',
-    WITHDARW = 'withdraw',
+    WITHDRAW = 'withdraw',
     REDEEM = 'redeem',
 }
 
