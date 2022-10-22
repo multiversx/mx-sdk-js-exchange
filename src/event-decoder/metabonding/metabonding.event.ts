@@ -1,5 +1,6 @@
 import { Address, BinaryCodec, OptionType } from '@elrondnetwork/erdjs/out';
 import { ErrInvalidDataField } from '../../errors';
+import { RawEventType } from '../generic.types';
 import { RawEvent } from '../raw.event';
 import { MetabondingEventTopics } from './metabonding.event.topics';
 import { MetabondingEventType } from './metabonding.types';
@@ -11,7 +12,7 @@ export class MetabondingEvent extends RawEvent {
     protected caller: Address | undefined;
     private userEntry: UserEntry | undefined;
 
-    constructor(init?: Partial<RawEvent>) {
+    constructor(init: RawEventType) {
         super(init);
         Object.assign(this, init);
         this.decodedTopics = new MetabondingEventTopics(this.topics);
