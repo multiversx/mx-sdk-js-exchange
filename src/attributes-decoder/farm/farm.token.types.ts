@@ -1,10 +1,15 @@
-export type FarmTokenAttributesType = {
-    rewardPerShare: string | undefined;
-    originalEnteringEpoch: number | undefined;
-    enteringEpoch: number | undefined;
-    aprMultiplier: number | undefined;
-    lockedRewards: boolean | undefined;
-    initialFarmingAmount: string | undefined;
-    compoundedReward: string | undefined;
-    currentFarmAmount: string | undefined;
+export type FarmTokenAttributesTypeV1_3 = {
+    rewardPerShare: string;
+    originalEnteringEpoch: number;
+    enteringEpoch: number;
+    initialFarmingAmount: string;
+    compoundedReward: string;
+    currentFarmAmount: string;
+    identifier?: string;
+    attributes?: string;
+};
+
+export type FarmTokenAttributesTypeV1_2 = FarmTokenAttributesTypeV1_3 & {
+    aprMultiplier: number;
+    lockedRewards: boolean;
 };
