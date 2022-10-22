@@ -1,17 +1,31 @@
-import { FarmTokenAttributesType } from '../../attributes-decoder/farm/farm.token.types';
+import {
+    FarmTokenAttributesTypeV1_3,
+    FarmTokenAttributesTypeV1_2,
+} from '../../attributes-decoder/farm/farm.token.types';
 import { GenericTokenType } from '../../generic.token';
 import { GenericEventType } from '../generic.types';
 
-export type FarmEventType = GenericEventType & {
-    farmingToken: GenericTokenType | undefined;
-    farmingReserve: string | undefined;
-    farmToken: GenericTokenType | undefined;
-    farmSupply: string | undefined;
-    rewardToken: GenericTokenType | undefined;
-    rewardTokenReserves: string | undefined;
-    farmAttributes: FarmTokenAttributesType | undefined;
+export type BaseFarmEventType = GenericEventType & {
+    farmingToken: GenericTokenType;
+    farmToken: GenericTokenType;
+    farmSupply: string;
+    rewardToken: GenericTokenType;
+    rewardTokenReserves: string;
 };
 
-export type EnterFarmEventType = FarmEventType & {
-    createdWithMerge: boolean | undefined;
+export type FarmEventTypeV1_3 = BaseFarmEventType & {
+    farmAttributes: FarmTokenAttributesTypeV1_3;
+};
+
+export type FarmEventTypeV1_2 = BaseFarmEventType & {
+    farmingReserve: string;
+    farmAttributes: FarmTokenAttributesTypeV1_2;
+};
+
+export type EnterFarmEventTypeV1_3 = FarmEventTypeV1_3 & {
+    createdWithMerge: boolean;
+};
+
+export type EnterFarmEventTypeV1_2 = FarmEventTypeV1_2 & {
+    createdWithMerge: boolean;
 };
