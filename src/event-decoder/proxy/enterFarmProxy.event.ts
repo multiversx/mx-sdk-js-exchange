@@ -13,6 +13,7 @@ import { WrappedFarmTokenAttributes } from '../../attributes-decoder/proxy/wrapp
 import { ErrInvalidDataField } from '../../errors';
 import { GenericToken } from '../../generic.token';
 import { GenericEvent } from '../generic.event';
+import { RawEventType } from '../generic.types';
 import { EnterFarmProxyEventType } from './farm.proxy.types';
 import { FarmProxyTopics } from './proxy.event.topics';
 
@@ -25,7 +26,7 @@ export class EnterFarmProxyEvent extends GenericEvent {
     private wrappedFarmAttributes: WrappedFarmTokenAttributes | undefined;
     private createdWithMerge: boolean | undefined;
 
-    constructor(init?: Partial<GenericEvent>) {
+    constructor(init: RawEventType) {
         super(init);
         this.decodedTopics = new FarmProxyTopics(this.topics);
         const decodedEvent = this.decodeEvent();

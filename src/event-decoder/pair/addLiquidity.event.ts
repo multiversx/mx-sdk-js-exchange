@@ -11,6 +11,7 @@ import BigNumber from 'bignumber.js';
 import { ErrInvalidDataField } from '../../errors';
 import { GenericToken } from '../../generic.token';
 import { GenericEvent } from '../generic.event';
+import { RawEventType } from '../generic.types';
 import { PairEventTopics } from './pair.event.topics';
 import { AddLiquidityEventType } from './pair.types';
 
@@ -24,7 +25,7 @@ export class AddLiquidityEvent extends GenericEvent {
     private firstTokenReserves: BigNumber | undefined;
     private secondTokenReserves: BigNumber | undefined;
 
-    constructor(init?: Partial<GenericEvent>) {
+    constructor(init: RawEventType) {
         super(init);
         this.decodedTopics = new PairEventTopics(this.topics);
         const decodedEvent = this.decodeEvent();

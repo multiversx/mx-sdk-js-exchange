@@ -5,13 +5,14 @@ import {
     TokenIdentifierType,
 } from '@elrondnetwork/erdjs/out';
 import { GenericToken } from '../../generic.token';
+import { RawEventType } from '../generic.types';
 import { PriceDiscoveryEvent } from './price.discovery.event';
 import { ExtraRewardsEventType } from './price.discovery.types';
 
 export class ExtraRewardsEvent extends PriceDiscoveryEvent {
     rewardsToken: GenericToken | undefined;
 
-    constructor(init?: Partial<PriceDiscoveryEvent>) {
+    constructor(init: RawEventType) {
         super(init);
         const decodedEvent = this.decodeEvent();
         this.rewardsToken = new GenericToken({

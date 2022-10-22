@@ -7,6 +7,7 @@ import {
 } from '@elrondnetwork/erdjs/out';
 import BigNumber from 'bignumber.js';
 import { GenericToken } from '../../generic.token';
+import { RawEventType } from '../generic.types';
 import { PriceDiscoveryEvent } from './price.discovery.event';
 import { RedeemEventType } from './price.discovery.types';
 
@@ -17,7 +18,7 @@ export class RedeemEvent extends PriceDiscoveryEvent {
     totalLpTokensReceived: BigNumber | undefined;
     rewardsToken: GenericToken | undefined;
 
-    constructor(init?: Partial<PriceDiscoveryEvent>) {
+    constructor(init: RawEventType) {
         super(init);
         const decodedEvent = this.decodeEvent();
 

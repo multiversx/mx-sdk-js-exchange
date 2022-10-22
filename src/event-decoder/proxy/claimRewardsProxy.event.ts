@@ -9,14 +9,14 @@ import {
 } from '@elrondnetwork/erdjs/out';
 import { WrappedFarmTokenAttributes } from '../../attributes-decoder/proxy/wrappedFarm.token';
 import { GenericToken } from '../../generic.token';
-import { GenericEvent } from '../generic.event';
 import { RewardsProxyEvent } from './rewardsProxy.event';
 import { ClaimRewardsProxyEventType } from './farm.proxy.types';
+import { RawEventType } from '../generic.types';
 
 export class ClaimRewardsProxyEvent extends RewardsProxyEvent {
     private rewardToken: GenericToken | undefined;
 
-    constructor(init?: Partial<GenericEvent>) {
+    constructor(init: RawEventType) {
         super(init);
         const decodedEvent = this.decodeEvent();
         this.rewardToken = new GenericToken({
