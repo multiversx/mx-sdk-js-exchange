@@ -1,6 +1,7 @@
-import { FarmVersion } from '../../generic.types';
-import { EnterFarmEvent } from '../enterFarm.event';
-import { ExitFarmEvent } from '../exitFarm.event';
+import { EnterFarmEventV1_2 } from '../v1.2/enter.farm.event';
+import { EnterFarmEventV1_3 } from '../v1.3/enterFarm.event';
+import { ExitFarmEventV1_2 } from '../v1.2/exit.farm.event';
+import { ExitFarmEventV1_3 } from '../v1.3/exitFarm.event';
 import {
     rawClaimRewardsEventV1_2,
     rawClaimRewardsEventV1_3,
@@ -9,17 +10,16 @@ import {
     rawExitFarmEventV1_2,
     rawExitFarmEventV1_3,
 } from '../mocks/mocked.raw.event';
-import { RewardsEvent } from '../rewards.event';
+import { RewardsEventV1_3 } from '../v1.3/rewards.event';
+import { RewardsEventV1_2 } from '../v1.2/rewards.event';
 
 describe('test farm v1.2 event decoders', () => {
     it('should decode enter farm event v1.2 farm', () => {
-        const enterFarmEvent = new EnterFarmEvent(
-            FarmVersion.V1_2,
-            rawEnterFarmEventV1_2,
-        );
+        const enterFarmEvent = new EnterFarmEventV1_2(rawEnterFarmEventV1_2);
         expect(enterFarmEvent.toJSON()).toEqual({
             address:
                 'erd1qqqqqqqqqqqqqpgqye633y7k0zd7nedfnp3m48h24qygm5jl2jpslxallh',
+            identifier: 'enterFarm',
             caller: 'erd1dgc8uvk35ahjnpgkvelm9zqwsgrl8f5ykcdjmrht8ljz0g20qzsqj8nenx',
             block: 7085901,
             epoch: 492,
@@ -53,13 +53,11 @@ describe('test farm v1.2 event decoders', () => {
     });
 
     it('should decode exit farm event v1.2 farm', () => {
-        const exitFarmEvent = new ExitFarmEvent(
-            FarmVersion.V1_2,
-            rawExitFarmEventV1_2,
-        );
+        const exitFarmEvent = new ExitFarmEventV1_2(rawExitFarmEventV1_2);
         expect(exitFarmEvent.toJSON()).toEqual({
             address:
                 'erd1qqqqqqqqqqqqqpgqye633y7k0zd7nedfnp3m48h24qygm5jl2jpslxallh',
+            identifier: 'exitFarm',
             caller: 'erd17n50m95a7leuarz7yj2tz3djukeyq07jrvfze3wunelghsnwm5hs5vpt82',
             block: 7085903,
             epoch: 492,
@@ -96,13 +94,13 @@ describe('test farm v1.2 event decoders', () => {
     });
 
     it('should decode claim rewards on farm event v1.2 farm', () => {
-        const claimRewardsEvent = new RewardsEvent(
-            FarmVersion.V1_2,
+        const claimRewardsEvent = new RewardsEventV1_2(
             rawClaimRewardsEventV1_2,
         );
         expect(claimRewardsEvent.toJSON()).toEqual({
             address:
                 'erd1qqqqqqqqqqqqqpgqye633y7k0zd7nedfnp3m48h24qygm5jl2jpslxallh',
+            identifier: 'claimRewards',
             caller: 'erd1zz8trvmnq7pjv7u60zg05u8rn34s9f27339dhz36vqdwr8v025hss32v32',
             block: 7085904,
             epoch: 492,
@@ -151,13 +149,11 @@ describe('test farm v1.2 event decoders', () => {
 
 describe('test farm v1.3 event decoders', () => {
     it('should decode enter farm event v1.3 farm', () => {
-        const enterFarmEvent = new EnterFarmEvent(
-            FarmVersion.V1_3,
-            rawEnterFarmEventV1_3,
-        );
+        const enterFarmEvent = new EnterFarmEventV1_3(rawEnterFarmEventV1_3);
         expect(enterFarmEvent.toJSON()).toEqual({
             address:
                 'erd1qqqqqqqqqqqqqpgqnqvjnn4haygsw2hls2k9zjjadnjf9w7g2jpsmc60a4',
+            identifier: 'enterFarm',
             caller: 'erd1qqqqqqqqqqqqqpgqrc4pg2xarca9z34njcxeur622qmfjp8w2jps89fxnl',
             block: 9254224,
             epoch: 643,
@@ -167,7 +163,6 @@ describe('test farm v1.3 event decoders', () => {
                 nonce: 0,
                 amount: '6997239644024897115',
             },
-            farmingReserve: undefined,
             farmToken: {
                 tokenID: 'EGLDMEXF-a4d81e',
                 nonce: 17521,
@@ -180,8 +175,6 @@ describe('test farm v1.3 event decoders', () => {
                 rewardPerShare: '802647299772169070',
                 originalEnteringEpoch: 643,
                 enteringEpoch: 643,
-                aprMultiplier: null,
-                lockedRewards: null,
                 initialFarmingAmount: '6997239644024897115',
                 compoundedReward: '0',
                 currentFarmAmount: '6997239644024897115',
@@ -191,13 +184,11 @@ describe('test farm v1.3 event decoders', () => {
     });
 
     it('should decode exit farm event v1.3 farm', () => {
-        const exitFarmEvent = new ExitFarmEvent(
-            FarmVersion.V1_3,
-            rawExitFarmEventV1_3,
-        );
+        const exitFarmEvent = new ExitFarmEventV1_3(rawExitFarmEventV1_3);
         expect(exitFarmEvent.toJSON()).toEqual({
             address:
                 'erd1qqqqqqqqqqqqqpgqnqvjnn4haygsw2hls2k9zjjadnjf9w7g2jpsmc60a4',
+            identifier: 'exitFarm',
             caller: 'erd1t9ascd7zgaearpujuhpp73vnyx87vdmcg5vjczrqdkge7ze3wnwqh4kkw0',
             block: 9253685,
             epoch: 643,
@@ -207,7 +198,6 @@ describe('test farm v1.3 event decoders', () => {
                 nonce: 0,
                 amount: '16314837633503193469',
             },
-            farmingReserve: undefined,
             farmToken: {
                 tokenID: 'EGLDMEXF-a4d81e',
                 nonce: 17488,
@@ -224,8 +214,6 @@ describe('test farm v1.3 event decoders', () => {
                 rewardPerShare: '802348741792404883',
                 originalEnteringEpoch: 642,
                 enteringEpoch: 642,
-                aprMultiplier: null,
-                lockedRewards: null,
                 initialFarmingAmount: '16479633973235548958',
                 compoundedReward: '0',
                 currentFarmAmount: '16479633973235548958',
@@ -234,13 +222,13 @@ describe('test farm v1.3 event decoders', () => {
     });
 
     it('should decode claim rewards on farm event v1.3 farm', () => {
-        const claimRewardsEvent = new RewardsEvent(
-            FarmVersion.V1_3,
+        const claimRewardsEvent = new RewardsEventV1_3(
             rawClaimRewardsEventV1_3,
         );
         expect(claimRewardsEvent.toJSON()).toEqual({
             address:
                 'erd1qqqqqqqqqqqqqpgqnqvjnn4haygsw2hls2k9zjjadnjf9w7g2jpsmc60a4',
+            identifier: 'claimRewards',
             caller: 'erd1qqqqqqqqqqqqqpgqrc4pg2xarca9z34njcxeur622qmfjp8w2jps89fxnl',
             block: 9254384,
             epoch: 643,
@@ -266,8 +254,6 @@ describe('test farm v1.3 event decoders', () => {
                 rewardPerShare: '800602181327386173',
                 originalEnteringEpoch: 618,
                 enteringEpoch: 618,
-                aprMultiplier: null,
-                lockedRewards: null,
                 initialFarmingAmount: '61445435106290949742',
                 compoundedReward: '0',
                 currentFarmAmount: '61445435106290949742',
@@ -276,8 +262,6 @@ describe('test farm v1.3 event decoders', () => {
                 rewardPerShare: '802666007487199522',
                 originalEnteringEpoch: 618,
                 enteringEpoch: 618,
-                aprMultiplier: null,
-                lockedRewards: null,
                 initialFarmingAmount: '61445435106290949742',
                 compoundedReward: '0',
                 currentFarmAmount: '61445435106290949742',

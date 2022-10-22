@@ -19,6 +19,7 @@ describe('test proxy pair event decoders', () => {
         expect(addLiquidityProxyEvent.toJSON()).toEqual({
             address:
                 'erd1qqqqqqqqqqqqqpgqrc4pg2xarca9z34njcxeur622qmfjp8w2jps89fxnl',
+            identifier: 'addLiquidityProxy',
             caller: 'erd1ztrzzq4xd3sx7aqr9rl368r3cz7843tnelf367dlfzrg37s94xlsy7kwj7',
             block: 9266338,
             epoch: 643,
@@ -55,6 +56,7 @@ describe('test proxy pair event decoders', () => {
         expect(removeLiquidityProxyEvent.toJSON()).toEqual({
             address:
                 'erd1qqqqqqqqqqqqqpgqrc4pg2xarca9z34njcxeur622qmfjp8w2jps89fxnl',
+            identifier: 'removeLiquidityProxy',
             caller: 'erd1advjt988u7pm5ltsh5jeudewfydh52xcn0u5ft3jzwm3ltum0q0qargnj3',
             block: 9263913,
             epoch: 643,
@@ -92,6 +94,7 @@ describe('test proxy farm event decoders', () => {
         expect(enterFarmProxyEvent.toJSON()).toEqual({
             address:
                 'erd1qqqqqqqqqqqqqpgqrc4pg2xarca9z34njcxeur622qmfjp8w2jps89fxnl',
+            identifier: 'enterFarmProxy',
             caller: 'erd16vutspr88q6q33wwcfgwwhkymas2g9vzv33m69e9fzpjykdmctxqgk96pn',
             block: 9266441,
             epoch: 643,
@@ -127,6 +130,7 @@ describe('test proxy farm event decoders', () => {
         expect(exitFarmProxyEvent.toJSON()).toEqual({
             address:
                 'erd1qqqqqqqqqqqqqpgqrc4pg2xarca9z34njcxeur622qmfjp8w2jps89fxnl',
+            identifier: 'exitFarmProxy',
             caller: 'erd1qpesj652rr4fqt4ta8r34e3lvaxek94a2cedn0ff69uj02auecnqqx5q06',
             block: 9266409,
             epoch: 643,
@@ -166,6 +170,7 @@ describe('test proxy farm event decoders', () => {
         expect(claimRewardsProxyEvent.toJSON()).toEqual({
             address:
                 'erd1qqqqqqqqqqqqqpgqrc4pg2xarca9z34njcxeur622qmfjp8w2jps89fxnl',
+            identifier: 'claimRewardsProxy',
             caller: 'erd1hcp4gdp5rxguqz50303ckawfkzfhjeckgf8yshpf6t3gvs465qgq3hmkj8',
             block: 9266424,
             epoch: 643,
