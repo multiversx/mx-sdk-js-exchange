@@ -6,33 +6,15 @@ import {
     TokenIdentifierType,
     U64Type,
 } from '@elrondnetwork/erdjs/out';
-import BigNumber from 'bignumber.js';
 import { FarmTokenAttributesV1_2 } from '../../../attributes-decoder/farm/farm.v1.2.token';
 import { RawEventType } from '../../generic.types';
-import { BaseFarmEvent } from '../enter.farm.base.event';
-import { FarmEventTypeV1_2 } from '../farm.types';
+import { EnterFarmEventV1_2 } from './enter.farm.event';
 
-export class ExitFarmEventV1_2 extends BaseFarmEvent {
-    readonly farmingReserve: BigNumber;
-    readonly farmAttributes: FarmTokenAttributesV1_2;
-
+export class ExitFarmEventV1_2 extends EnterFarmEventV1_2 {
     constructor(init: RawEventType) {
         super(init);
         this.rewardToken.nonce = this.decodedEvent.rewardTokenNonce;
         this.rewardToken.amount = this.decodedEvent.rewardTokenAmount;
-
-        this.farmingReserve = this.decodedEvent.farmingReserve;
-        this.farmAttributes = FarmTokenAttributesV1_2.fromDecodedAttributes(
-            this.decodedEvent.farmAttributes,
-        );
-    }
-
-    toJSON(): FarmEventTypeV1_2 {
-        return {
-            ...super.toJSON(),
-            farmingReserve: this.farmingReserve.toFixed(),
-            farmAttributes: this.farmAttributes.toJSON(),
-        };
     }
 
     getStructure(): StructType {

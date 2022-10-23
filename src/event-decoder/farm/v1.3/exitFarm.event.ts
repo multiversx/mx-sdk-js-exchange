@@ -8,26 +8,13 @@ import {
 } from '@elrondnetwork/erdjs/out';
 import { FarmTokenAttributesV1_3 } from '../../../attributes-decoder/farm/farm.v1.3.token';
 import { RawEventType } from '../../generic.types';
-import { BaseFarmEvent } from '../enter.farm.base.event';
-import { FarmEventTypeV1_3 } from '../farm.types';
+import { EnterFarmEventV1_3 } from './enterFarm.event';
 
-export class ExitFarmEventV1_3 extends BaseFarmEvent {
-    readonly farmAttributes: FarmTokenAttributesV1_3;
-
+export class ExitFarmEventV1_3 extends EnterFarmEventV1_3 {
     constructor(init: RawEventType) {
         super(init);
         this.rewardToken.nonce = this.decodedEvent.rewardTokenNonce;
         this.rewardToken.amount = this.decodedEvent.rewardTokenAmount;
-        this.farmAttributes = FarmTokenAttributesV1_3.fromDecodedAttributes(
-            this.decodedEvent.farmAttributes,
-        );
-    }
-
-    toJSON(): FarmEventTypeV1_3 {
-        return {
-            ...super.toJSON(),
-            farmAttributes: this.farmAttributes.toJSON(),
-        };
     }
 
     getStructure(): StructType {
