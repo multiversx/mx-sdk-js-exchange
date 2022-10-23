@@ -4,8 +4,6 @@ import { GenericEventType, RawEventType } from './generic.types';
 import { RawEvent } from './raw.event';
 
 export class GenericEvent extends RawEvent {
-    protected address: string | undefined;
-    protected identifier: string | undefined;
     protected caller: Address | undefined;
     protected block: BigNumber | undefined;
     protected epoch: BigNumber | undefined;
