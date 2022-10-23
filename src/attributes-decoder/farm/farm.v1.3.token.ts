@@ -58,7 +58,7 @@ export class FarmTokenAttributesV1_3 {
         const attributesBuffer = Buffer.from(attributes, 'base64');
         const codec = new BinaryCodec();
 
-        const structType = FarmTokenAttributesV1_3.getStructure();
+        const structType = this.getStructure();
         const [decoded] = codec.decodeNested(attributesBuffer, structType);
 
         return FarmTokenAttributesV1_3.fromDecodedAttributes(decoded.valueOf());

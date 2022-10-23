@@ -1,5 +1,6 @@
 import {
     BigUIntType,
+    BinaryCodec,
     BooleanType,
     FieldDefinition,
     StructType,
@@ -35,6 +36,16 @@ export class FarmTokenAttributesV1_2 extends FarmTokenAttributesV1_3 {
             aprMultiplier: decodedAttributes.aprMultiplier.toNumber(),
             lockedRewards: decodedAttributes.withLockedRewards,
         });
+    }
+
+    static fromAttributes(attributes: string): FarmTokenAttributesV1_2 {
+        const attributesBuffer = Buffer.from(attributes, 'base64');
+        const codec = new BinaryCodec();
+
+        const structType = this.getStructure();
+        const [decoded] = codec.decodeNested(attributesBuffer, structType);
+
+        return FarmTokenAttributesV1_2.fromDecodedAttributes(decoded.valueOf());
     }
 
     static getStructure(): StructType {

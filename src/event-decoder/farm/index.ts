@@ -1,3 +1,5 @@
+export * from './enter.farm.base.event';
+export * from './rewards.base.event';
 export * from './v1.2/enter.farm.event';
 export * from './v1.2/exit.farm.event';
 export * from './v1.2/rewards.event';
