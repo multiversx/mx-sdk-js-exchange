@@ -5,6 +5,7 @@ import {
 } from '@elrondnetwork/erdjs/out';
 import { Energy } from '../../attributes-decoder/energy/energy';
 import { ErrInvalidDataField } from '../../errors';
+import { RawEventType } from '../generic.types';
 import { RawEvent } from '../raw.event';
 import { EnergyEventTopics } from './energy.event.topics';
 import { EnergyEventType } from './energy.event.types';
@@ -14,7 +15,7 @@ export class EnergyEvent extends RawEvent {
     readonly oldEnergyEntry: Energy;
     readonly newEnergyEntry: Energy;
 
-    constructor(init?: Partial<RawEvent>) {
+    constructor(init: RawEventType) {
         super(init);
         this.decodedTopics = new EnergyEventTopics(this.topics);
         const decodedEvent = this.decodeEvent();

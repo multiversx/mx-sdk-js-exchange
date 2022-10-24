@@ -1,14 +1,3 @@
-export enum FarmVersion {
-    V1_2 = 'v1.2',
-    V1_3 = 'v1.3',
-}
-
-export enum FarmRewardType {
-    UNLOCKED_REWARDS = 'unlockedRewards',
-    LOCKED_REWARDS = 'lockedRewards',
-    CUSTOM_REWARDS = 'customRewards',
-}
-
 export enum PAIR_EVENTS {
     SWAP_FIXED_INPUT = 'swapTokensFixedInput',
     SWAP_FIXED_OUTPUT = 'swapTokensFixedOutput',
@@ -57,8 +46,16 @@ export enum SIMPLE_LOCK_ENERGY_EVENTS {
     ENERGY_UPDATED = 'energyUpdated',
 }
 
+export type RawEventType = {
+    address: string | undefined;
+    identifier: string | undefined;
+    topics?: string[];
+    data?: string | undefined;
+};
+
 export type GenericEventType = {
     address: string | undefined;
+    identifier: string | undefined;
     caller: string | undefined;
     block: number | undefined;
     epoch: number | undefined;

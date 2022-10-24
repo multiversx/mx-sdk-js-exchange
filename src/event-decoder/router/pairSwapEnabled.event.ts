@@ -8,6 +8,7 @@ import {
 } from '@elrondnetwork/erdjs/out';
 import { ErrInvalidDataField } from '../../errors';
 import { GenericEvent } from '../generic.event';
+import { RawEventType } from '../generic.types';
 import { RawEvent } from '../raw.event';
 import { RouterEventTopics } from './createPair.topics';
 import { PairSwapEnableEventType } from './router.types';
@@ -20,7 +21,7 @@ export class PairSwapEnabledEvent extends RawEvent {
     private readonly secondTokenID: string;
     private readonly pairAddress: Address;
 
-    constructor(init?: Partial<GenericEvent>) {
+    constructor(init: RawEventType) {
         super(init);
         this.decodedTopics = new RouterEventTopics(this.topics);
         const decodedEvent = this.decodeEvent();

@@ -8,6 +8,7 @@ import {
 } from '@elrondnetwork/erdjs/out';
 import { ErrInvalidDataField } from '../../errors';
 import { GenericEvent } from '../generic.event';
+import { RawEventType } from '../generic.types';
 import { RouterEventTopics } from './createPair.topics';
 import { CreatePairEventType } from './router.types';
 
@@ -19,7 +20,7 @@ export class CreatePairEvent extends GenericEvent {
     private totalFeePercent: number | undefined;
     private specialFeePercent: number | undefined;
 
-    constructor(init?: Partial<GenericEvent>) {
+    constructor(init: RawEventType) {
         super(init);
         this.decodedTopics = new RouterEventTopics(this.topics);
         const decodedEvent = this.decodeEvent();

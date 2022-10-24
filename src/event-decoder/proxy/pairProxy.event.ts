@@ -11,6 +11,7 @@ import { WrappedLpTokenAttributes } from '../../attributes-decoder/proxy/wrapped
 import { ErrInvalidDataField } from '../../errors';
 import { GenericToken } from '../../generic.token';
 import { GenericEvent } from '../generic.event';
+import { RawEventType } from '../generic.types';
 import { PairProxyEventType } from './pair.proxy.types';
 import { PairProxyTopics } from './proxy.event.topics';
 
@@ -22,7 +23,7 @@ export class PairProxyEvent extends GenericEvent {
     protected wrappedLpToken: GenericToken | undefined;
     protected wrappedLpAttributes: WrappedLpTokenAttributes | undefined;
 
-    constructor(init?: Partial<GenericEvent>) {
+    constructor(init: RawEventType) {
         super(init);
         this.decodedTopics = new PairProxyTopics(this.topics);
         const decodedEvent = this.decodeEvent();
