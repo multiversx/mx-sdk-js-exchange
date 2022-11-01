@@ -13,3 +13,5 @@ export type FarmTokenAttributesTypeV1_2 = FarmTokenAttributesTypeV1_3 & {
     aprMultiplier: number;
     lockedRewards: boolean;
 };
+
+export type FarmTokenAttributesTypeV2 = FarmTokenAttributesTypeV1_3;
