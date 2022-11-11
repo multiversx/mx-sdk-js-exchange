@@ -5,37 +5,24 @@ import {
     StructType,
     U64Type,
 } from '@elrondnetwork/erdjs';
+import { FarmTokenAttributes } from './farm.token';
 import { FarmTokenAttributesTypeV1_3 } from './farm.token.types';
 
-export class FarmTokenAttributesV1_3 {
-    readonly rewardPerShare: string;
+export class FarmTokenAttributesV1_3 extends FarmTokenAttributes {
     readonly originalEnteringEpoch: number;
-    readonly enteringEpoch: number;
     readonly initialFarmingAmount: string;
-    readonly compoundedReward: string;
-    readonly currentFarmAmount: string;
-    readonly identifier?: string;
-    readonly attributes?: string;
 
     constructor(init: FarmTokenAttributesTypeV1_3) {
-        this.rewardPerShare = init.rewardPerShare;
+        super(init);
         this.originalEnteringEpoch = init.originalEnteringEpoch;
-        this.enteringEpoch = init.enteringEpoch;
         this.initialFarmingAmount = init.initialFarmingAmount;
-        this.compoundedReward = init.compoundedReward;
-        this.currentFarmAmount = init.currentFarmAmount;
-        this.identifier = init.identifier;
-        this.attributes = init.attributes;
     }
 
     toJSON(): FarmTokenAttributesTypeV1_3 {
         return {
-            rewardPerShare: this.rewardPerShare,
+            ...super.toJSON(),
             originalEnteringEpoch: this.originalEnteringEpoch,
-            enteringEpoch: this.enteringEpoch,
             initialFarmingAmount: this.initialFarmingAmount,
-            compoundedReward: this.compoundedReward,
-            currentFarmAmount: this.currentFarmAmount,
         };
     }
 
@@ -43,14 +30,11 @@ export class FarmTokenAttributesV1_3 {
         decodedAttributes: any,
     ): FarmTokenAttributesV1_3 {
         return new FarmTokenAttributesV1_3({
-            rewardPerShare: decodedAttributes.rewardPerShare.toString(),
+            ...super.fromDecodedAttributes(decodedAttributes).toJSON(),
             originalEnteringEpoch:
                 decodedAttributes.originalEnteringEpoch.toNumber(),
-            enteringEpoch: decodedAttributes.enteringEpoch.toNumber(),
             initialFarmingAmount:
                 decodedAttributes.initialFarmingAmount.toFixed(),
-            compoundedReward: decodedAttributes.compoundedReward.toFixed(),
-            currentFarmAmount: decodedAttributes.currentFarmAmount.toFixed(),
         });
     }
 
@@ -61,7 +45,7 @@ export class FarmTokenAttributesV1_3 {
         const structType = this.getStructure();
         const [decoded] = codec.decodeNested(attributesBuffer, structType);
 
-        return FarmTokenAttributesV1_3.fromDecodedAttributes(decoded.valueOf());
+        return this.fromDecodedAttributes(decoded.valueOf());
     }
 
     static getStructure(): StructType {
