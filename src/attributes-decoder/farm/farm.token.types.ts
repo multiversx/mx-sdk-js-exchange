@@ -17,4 +17,6 @@ export type FarmTokenAttributesTypeV1_2 = FarmTokenAttributesTypeV1_3 & {
     lockedRewards: boolean;
 };
 
-export type FarmTokenAttributesTypeV2 = FarmTokenAttributesType;
+export type FarmTokenAttributesTypeV2 = FarmTokenAttributesType & {
+    originalOwner: string;
+};
