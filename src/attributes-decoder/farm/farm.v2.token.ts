@@ -1,5 +1,6 @@
 import {
     AddressType,
+    BinaryCodec,
     FieldDefinition,
     StructType,
 } from '@elrondnetwork/erdjs/out';
@@ -28,8 +29,13 @@ export class FarmTokenAttributesV2 extends FarmTokenAttributes {
     }
 
     static fromAttributes(attributes: string): FarmTokenAttributesV2 {
-        const decodedAttributes = super.fromAttributes(attributes);
-        return this.fromDecodedAttributes(decodedAttributes);
+        const attributesBuffer = Buffer.from(attributes, 'base64');
+        const codec = new BinaryCodec();
+
+        const structType = this.getStructure();
+        const [decoded] = codec.decodeNested(attributesBuffer, structType);
+
+        return this.fromDecodedAttributes(decoded.valueOf());
     }
 
     static getStructure(): StructType {
