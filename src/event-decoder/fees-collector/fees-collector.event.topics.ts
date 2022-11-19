@@ -1,8 +1,8 @@
 import { Address } from '@elrondnetwork/erdjs/out';
 
 export class FeesCollectorEventTopics {
-    private readonly eventName: string;
-    private readonly caller: Address;
+    readonly eventName: string;
+    readonly caller: Address;
     readonly paymentToken: string;
     readonly currentWeek: number;
 
@@ -23,13 +23,5 @@ export class FeesCollectorEventTopics {
             paymentToken: this.paymentToken,
             currentWeek: this.currentWeek
         };
-    }
-
-    getCaller(): Address {
-        return this.caller;
-    }
-
-    getEventName(): string {
-        return this.eventName;
     }
 }

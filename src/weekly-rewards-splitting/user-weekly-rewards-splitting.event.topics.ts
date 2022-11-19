@@ -1,10 +1,9 @@
-import { Address, BinaryCodec } from '@elrondnetwork/erdjs/out';
+import { Address } from '@elrondnetwork/erdjs/out';
 import { Energy, EnergyType } from "../attributes-decoder";
-import { ErrInvalidDataField } from "../errors";
 
 export class UserWeeklyRewardsSplittingEventTopics {
-    private readonly eventName: string;
-    private readonly caller: Address;
+    readonly eventName: string;
+    readonly caller: Address;
     readonly currentWeek: number;
     readonly energy: EnergyType;
 
@@ -15,42 +14,15 @@ export class UserWeeklyRewardsSplittingEventTopics {
             Buffer.from(rawTopics[2], 'base64').toString('hex'),
             16,
         );
-        this.energy = this.decodeEnergy(rawTopics[3]);
+        this.energy = Energy.fromAttributes(rawTopics[3]).toJSON();
     }
 
     toJSON() {
         return {
             eventName: this.eventName,
-            caller: this.caller.toJSON(),
+            caller: this.caller,
             energy: this.energy,
             currentWeek: this.currentWeek
-        };
-    }
-
-    getCaller(): Address {
-        return this.caller;
-    }
-
-    getEventName(): string {
-        return this.eventName;
-    }
-
-    private decodeEnergy(rawTopic: string): EnergyType {
-        if (rawTopic == undefined) {
-            throw new ErrInvalidDataField(UserWeeklyRewardsSplittingEventTopics.name);
-        }
-
-        const data = Buffer.from(rawTopic, 'base64');
-        const codec = new BinaryCodec();
-
-        const eventStruct = Energy.getStructure();
-
-        const [decoded] = codec.decodeNested(data, eventStruct);
-        const energy = decoded.valueOf()
-        return {
-            amount: energy.amount.toFixed(),
-            lastUpdateEpoch: energy.last_update_epoch.toNumber(),
-            totalLockedTokens: energy.total_locked_tokens.toFixed(),
         };
     }
 }

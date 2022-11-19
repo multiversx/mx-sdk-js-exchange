@@ -1,6 +1,7 @@
 import { EnergyType, EsdtTokenPayment } from "../attributes-decoder";
 
 export type UpdateUserEnergyEventType = {
+    caller: string;
     currentWeek: number;
     energy: EnergyType;
 };

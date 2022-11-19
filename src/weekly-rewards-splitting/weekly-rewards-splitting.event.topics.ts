@@ -1,7 +1,7 @@
 import BigNumber from "bignumber.js";
 
 export class WeeklyRewardsSplittingEventTopics {
-    private readonly eventName: string;
+    readonly eventName: string;
     readonly currentWeek: number;
     readonly totalLockedTokens: string;
     readonly totalEnergy: string;
@@ -29,9 +29,5 @@ export class WeeklyRewardsSplittingEventTopics {
             totalLockedTokens: this.totalLockedTokens,
             totalEnergy: this.totalEnergy,
         };
-    }
-
-    getEventName(): string {
-        return this.eventName;
     }
 }

@@ -13,6 +13,7 @@ describe('test claimRewards event decoder', () => {
             rawUpdateUserEnergyEvent,
         );
         expect(updateUserEnergyEvent.toJSON()).toEqual({
+            caller: "erd1p5grtfn078v5djndv73g69wcxkul3aljcdkcjw0eg7gshat9qsjsjek3f5",
             currentWeek: 169,
             energy: {
                 "amount": "80911134245707400000000000000",
@@ -36,6 +37,7 @@ describe('test claimRewards event decoder', () => {
             rawClaimMultiEventNoRewards,
         );
         expect(claimMultiEvent.toJSON()).toEqual({
+            caller: "erd1p5grtfn078v5djndv73g69wcxkul3aljcdkcjw0eg7gshat9qsjsjek3f5",
             currentWeek: 169,
             energy: {
                 amount: "80911134245707400000000000000",
@@ -50,6 +52,7 @@ describe('test claimRewards event decoder', () => {
             rawClaimMultiEventWithRewards,
         );
         expect(claimMultiEvent.toJSON()).toEqual({
+            caller: "erd1p5grtfn078v5djndv73g69wcxkul3aljcdkcjw0eg7gshat9qsjsjek3f5",
             currentWeek: 204,
             energy: {
                 amount: "48074812998532800000000000000",

@@ -9,17 +9,13 @@ export class DepositSwapFeesEvent extends RawEvent {
     private decodedTopics: FeesCollectorEventTopics;
 
     protected caller: Address | undefined;
-    private readonly paymentToken: string;
     private readonly paymentAmount: string;
-    private readonly currentWeek: number;
 
     constructor(init: RawEventType) {
         super(init);
         Object.assign(this, init);
         this.decodedTopics = new FeesCollectorEventTopics(this.topics);
 
-        this.currentWeek = this.decodedTopics.currentWeek;
-        this.paymentToken = this.decodedTopics.paymentToken;
         if (this.data !== undefined) {
             this.paymentAmount = new BigNumber(this.data, 16).toFixed();
         } else {
@@ -34,8 +30,8 @@ export class DepositSwapFeesEvent extends RawEvent {
 
     toJSON(): DepositSwapFeesEventType {
         return {
-            currentWeek: this.currentWeek,
-            paymentToken: this.paymentToken,
+            currentWeek: this.decodedTopics.currentWeek,
+            paymentToken: this.decodedTopics.paymentToken,
             paymentAmount: this.paymentAmount,
         };
     }
