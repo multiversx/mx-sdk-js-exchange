@@ -4,6 +4,7 @@ export class FeesCollectorEventTopics {
     readonly eventName: string;
     readonly caller: Address;
     readonly paymentToken: string;
+    readonly paymentNonce: number;
     readonly currentWeek: number;
 
     constructor(rawTopics: string[]) {
@@ -14,6 +15,10 @@ export class FeesCollectorEventTopics {
             16,
         );
         this.paymentToken = Buffer.from(rawTopics[3], 'base64').toString();
+        this.paymentNonce = parseInt(
+            Buffer.from(rawTopics[4], 'base64').toString('hex'),
+            16,
+        );
     }
 
     toJSON() {
@@ -21,6 +26,7 @@ export class FeesCollectorEventTopics {
             eventName: this.eventName,
             caller: this.caller,
             paymentToken: this.paymentToken,
+            paymentNonce: this.paymentNonce,
             currentWeek: this.currentWeek
         };
     }

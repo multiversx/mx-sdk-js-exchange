@@ -1,4 +1,3 @@
-import { Address } from '@elrondnetwork/erdjs/out';
 import { RawEvent } from '../raw.event';
 import { FeesCollectorEventTopics } from "./fees-collector.event.topics";
 import { DepositSwapFeesEventType } from "./fees-collector.types";
@@ -7,9 +6,7 @@ import { RawEventType } from "../generic.types";
 
 export class DepositSwapFeesEvent extends RawEvent {
     private decodedTopics: FeesCollectorEventTopics;
-
-    protected caller: Address | undefined;
-    private readonly paymentAmount: string;
+    readonly paymentAmount: string;
 
     constructor(init: RawEventType) {
         super(init);
@@ -26,7 +23,6 @@ export class DepositSwapFeesEvent extends RawEvent {
     getTopics(): FeesCollectorEventTopics {
         return this.decodedTopics;
     }
-
 
     toJSON(): DepositSwapFeesEventType {
         return {
