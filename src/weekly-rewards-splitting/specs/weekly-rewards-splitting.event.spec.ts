@@ -14,8 +14,11 @@ describe('test claimRewards event decoder', () => {
         );
         expect(updateUserEnergyEvent.toJSON()).toEqual({
             currentWeek: 169,
-            paymentToken: 'RIDE-6e4c49',
-            paymentAmount: '25000000000000000',
+            energy: {
+                "amount": "80911134245707400000000000000",
+                "lastUpdateEpoch": 2767,
+                "totalLockedTokens": "56462759417800000000000000",
+            }
         });
     });
     it('UpdateGlobalAmountsEvent should decode', () => {
