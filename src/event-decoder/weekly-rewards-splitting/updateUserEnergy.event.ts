@@ -1,6 +1,7 @@
 import { UserWeeklyRewardsSplittingEventTopics } from "./user-weekly-rewards-splitting.event.topics";
-import { RawEvent, RawEventType } from "../event-decoder";
 import { UpdateUserEnergyEventType } from "./weekly-rewards-splitting.types";
+import { RawEvent } from '../raw.event';
+import { RawEventType } from '../generic.types';
 
 export class UpdateUserEnergyEvent extends RawEvent {
     private decodedTopics: UserWeeklyRewardsSplittingEventTopics;

@@ -1,10 +1,11 @@
-import { RawEvent, RawEventType } from "../event-decoder";
 import {
     UpdateGlobalAmountsEventType,
 } from "./weekly-rewards-splitting.types";
 import {
     WeeklyRewardsSplittingEventTopics
 } from "./weekly-rewards-splitting.event.topics";
+import { RawEvent } from '../raw.event';
+import { RawEventType } from '../generic.types';
 
 export class UpdateGlobalAmountsEvent extends RawEvent {
     private decodedTopics: WeeklyRewardsSplittingEventTopics;
