@@ -3,10 +3,11 @@ import {
     ListType,
 } from '@elrondnetwork/erdjs/out';
 import { UserWeeklyRewardsSplittingEventTopics } from "./user-weekly-rewards-splitting.event.topics";
-import { RawEvent, RawEventType } from "../event-decoder";
-import { EsdtTokenPayment } from "../attributes-decoder";
+import { EsdtTokenPayment } from "../../attributes-decoder";
 import { ClaimMultiEventType } from "./weekly-rewards-splitting.types";
-import { ErrInvalidDataField } from "../errors";
+import { ErrInvalidDataField } from "../../errors";
+import { RawEvent } from '../raw.event';
+import { RawEventType } from '../generic.types';
 
 export class ClaimMultiEvent extends RawEvent {
     private decodedTopics: UserWeeklyRewardsSplittingEventTopics;

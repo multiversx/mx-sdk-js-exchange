@@ -1,4 +1,4 @@
-import { EnergyType, EsdtTokenPayment } from "../attributes-decoder";
+import { EnergyType, EsdtTokenPayment } from "../../attributes-decoder";
 
 export type UpdateUserEnergyEventType = {
     caller: string;

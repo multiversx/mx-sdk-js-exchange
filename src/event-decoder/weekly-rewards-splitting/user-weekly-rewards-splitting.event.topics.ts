@@ -1,5 +1,5 @@
 import { Address } from '@elrondnetwork/erdjs/out';
-import { Energy, EnergyType } from "../attributes-decoder";
+import { Energy, EnergyType } from "../../attributes-decoder";
 
 export class UserWeeklyRewardsSplittingEventTopics {
     readonly eventName: string;

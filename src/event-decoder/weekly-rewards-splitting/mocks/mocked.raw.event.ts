@@ -1,4 +1,4 @@
-import { RawEvent } from "../../event-decoder";
+import { RawEvent } from "../../index";
 
 
 export const rawUpdateGlobalAmountsEvent = new RawEvent({
