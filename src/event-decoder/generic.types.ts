@@ -11,6 +11,14 @@ export enum FARM_EVENTS {
     CLAIM_REWARDS = 'claimRewards',
     COMPOUND_REWARDS = 'compoundRewards',
 }
+export enum WEEKLY_REWARDS_SPLITTING_EVENTS {
+    UPDATE_GLOBAL_AMOUNTS = 'updateGlobalAmounts',
+    UPDATE_USER_ENERGY = 'updateUserEnergy',
+    CLAIM_MULTI = 'claimMulti'
+}
+export enum FEES_COLLECTOR_EVENTS {
+    DEPOSIT_SWAP_FEES = 'depositSwapFees'
+}
 export enum PROXY_EVENTS {
     ADD_LIQUIDITY_PROXY = 'addLiquidityProxy',
     REMOVE_LIQUIDITY_PROXY = 'removeLiquidityProxy',

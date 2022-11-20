@@ -1,9 +1,10 @@
 import { Address } from '@elrondnetwork/erdjs/out';
+import { EsdtTokenPayment } from "../../attributes-decoder";
 
 export class FeesCollectorEventTopics {
     readonly eventName: string;
     readonly caller: Address;
-    readonly paymentToken: string;
+    readonly payment: EsdtTokenPayment;
     readonly currentWeek: number;
 
     constructor(rawTopics: string[]) {
@@ -13,14 +14,14 @@ export class FeesCollectorEventTopics {
             Buffer.from(rawTopics[2], 'base64').toString('hex'),
             16,
         );
-        this.paymentToken = Buffer.from(rawTopics[3], 'base64').toString();
+        this.payment = EsdtTokenPayment.fromAttributes(rawTopics[3]);
     }
 
     toJSON() {
         return {
             eventName: this.eventName,
-            caller: this.caller,
-            paymentToken: this.paymentToken,
+            caller: this.caller.bech32(),
+            payment: this.payment.toJSON(),
             currentWeek: this.currentWeek
         };
     }
