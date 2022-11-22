@@ -1,5 +1,4 @@
-import { RawEvent } from "../../index";
-
+import { RawEvent } from '../../index';
 
 export const rawUpdateGlobalAmountsEvent = new RawEvent({
     address: 'erd1qqqqqqqqqqqqqpgqur83hqn9j4y6v93m09nn2q0yazuhk2rvpr9sarz5yj',
@@ -46,5 +45,5 @@ export const rawClaimMultiEventWithRewards = new RawEvent({
         'zA==',
         'AAAADQCbVo2ivf+a362sAAAAAAAAAAAK8gAAAAsccgBMrfZnziIAAA==',
     ],
-    data: '0000000c5745474c442d64376336626200000000000000000000000702f46aead28a1b0000000d50524f54454f2d643165663339000000000000000000000006850ba45baeef0000000d4453555045522d39616638646600000000000000000000000801f381f9e6bf7e03',
+    data: 'AAAADFdFR0xELWQ3YzZiYgAAAAAAAAAAAAAABwL0aurSihsAAAANUFJPVEVPLWQxZWYzOQAAAAAAAAAAAAAABoULpFuu7wAAAA1EU1VQRVItOWFmOGRmAAAAAAAAAAAAAAAIAfOB+ea/fgM=',
 });
