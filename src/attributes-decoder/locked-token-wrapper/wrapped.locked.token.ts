@@ -7,10 +7,12 @@ import {
 import { WrappedLockedTokenType } from './wrapped.lock.token.types';
 
 export class WrappedLockedTokenAttributes {
-    lockedTokenNonce: number | undefined;
+    lockedTokenNonce: number;
 
-    constructor(init?: Partial<WrappedLockedTokenAttributes>) {
-        Object.assign(this, init);
+    constructor(init: {
+        lockedTokenNonce: number;
+    }) {
+        this.lockedTokenNonce = init.lockedTokenNonce;
     }
 
     toJSON(): WrappedLockedTokenType {

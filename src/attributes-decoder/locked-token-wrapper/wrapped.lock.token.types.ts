@@ -1,3 +1,3 @@
 export type WrappedLockedTokenType = {
-    lockedTokenNonce: number | undefined;
+    lockedTokenNonce: number;
 };
