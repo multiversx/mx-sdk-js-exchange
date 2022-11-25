@@ -5,20 +5,26 @@ export enum PAIR_EVENTS {
     REMOVE_LIQUIDITY = 'removeLiquidity',
     SWAP_NO_FEE = 'swapNoFeeAndForward',
 }
+
 export enum FARM_EVENTS {
     ENTER_FARM = 'enterFarm',
     EXIT_FARM = 'exitFarm',
     CLAIM_REWARDS = 'claimRewards',
     COMPOUND_REWARDS = 'compoundRewards',
 }
-export enum WEEKLY_REWARDS_SPLITTING_EVENTS {
-    UPDATE_GLOBAL_AMOUNTS = 'updateGlobalAmounts',
-    UPDATE_USER_ENERGY = 'updateUserEnergy',
-    CLAIM_MULTI = 'claimMulti'
-}
+
 export enum FEES_COLLECTOR_EVENTS {
-    DEPOSIT_SWAP_FEES = 'depositSwapFees'
+    DEPOSIT_SWAP_FEES = 'depositSwapFees',
+    CLAIM_REWARDS = "claimRewards",
 }
+
+export enum CLAIM_REWARDS_EVENT_NAMES {
+    UPDATE_GLOBAL_AMOUNTS = 'update_global_mounts',
+    UPDATE_USER_ENERGY = 'update_user_energy',
+    CLAIM_MULTI = 'claim_multi',
+    CLAIM_REWARDS = 'claim_rewards'
+}
+
 export enum PROXY_EVENTS {
     ADD_LIQUIDITY_PROXY = 'addLiquidityProxy',
     REMOVE_LIQUIDITY_PROXY = 'removeLiquidityProxy',
