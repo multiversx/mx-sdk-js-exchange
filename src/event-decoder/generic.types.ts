@@ -1,48 +1,45 @@
 export enum PAIR_EVENTS {
-    SWAP_FIXED_INPUT = 'swapTokensFixedInput',
-    SWAP_FIXED_OUTPUT = 'swapTokensFixedOutput',
-    ADD_LIQUIDITY = 'addLiquidity',
-    REMOVE_LIQUIDITY = 'removeLiquidity',
-    SWAP_NO_FEE = 'swapNoFeeAndForward',
+    SWAP = 'swap',
+    ADD_LIQUIDITY = 'add_liquidity',
+    REMOVE_LIQUIDITY = 'remove_liquidity',
+    SWAP_NO_FEE = 'swap_no_fee_and_forward',
 }
 
 export enum FARM_EVENTS {
-    ENTER_FARM = 'enterFarm',
-    EXIT_FARM = 'exitFarm',
-    CLAIM_REWARDS = 'claimRewards',
-    COMPOUND_REWARDS = 'compoundRewards',
+    ENTER_FARM = 'enter_farm',
+    EXIT_FARM = 'exit_farm',
+    CLAIM_REWARDS = 'claim_rewards',
+    COMPOUND_REWARDS = 'compound_rewards',
 }
 
 export enum FEES_COLLECTOR_EVENTS {
-    DEPOSIT_SWAP_FEES = 'depositSwapFees',
-    CLAIM_REWARDS = "claimRewards",
+    DEPOSIT_SWAP_FEES = 'deposit_swap_fees_event',
 }
 
-export enum CLAIM_REWARDS_EVENT_NAMES {
+export enum WEEKLY_REWARDS_SPLITTING_EVENTS {
     UPDATE_GLOBAL_AMOUNTS = 'update_global_mounts',
     UPDATE_USER_ENERGY = 'update_user_energy',
     CLAIM_MULTI = 'claim_multi',
-    CLAIM_REWARDS = 'claim_rewards'
 }
 
 export enum PROXY_EVENTS {
-    ADD_LIQUIDITY_PROXY = 'addLiquidityProxy',
-    REMOVE_LIQUIDITY_PROXY = 'removeLiquidityProxy',
-    ENTER_FARM_PROXY = 'enterFarmProxy',
-    EXIT_FARM_PROXY = 'exitFarmProxy',
-    CLAIM_REWARDS_PROXY = 'claimRewardsFarmProxy',
-    COMPOUND_REWARDS_PROXY = 'compoundRewardsFarmProxy',
+    ADD_LIQUIDITY_PROXY = 'add_liquidity_proxy',
+    REMOVE_LIQUIDITY_PROXY = 'remove_liquidity_proxy',
+    ENTER_FARM_PROXY = 'enter_farm_proxy',
+    EXIT_FARM_PROXY = 'exit_farm_proxy',
+    CLAIM_REWARDS_PROXY = 'claim_rewards_farm_froxy',
+    COMPOUND_REWARDS_PROXY = 'compound_rewards_farm_proxy',
 }
 
 export enum METABONDING_EVENTS {
-    STAKE_LOCKED_ASSET = 'stakeLockedAsset',
-    UNSTAKE = 'unstake',
-    UNBOND = 'unbond',
+    STAKE_LOCKED_ASSET = 'stakeEvent',
+    UNSTAKE = 'unstakeEvent',
+    UNBOND = 'unbondEvent',
 }
 
 export enum ROUTER_EVENTS {
-    CREATE_PAIR = 'createPair',
-    PAIR_SWAP_ENABLED = 'setSwapEnabledByUser',
+    CREATE_PAIR = 'create_pair',
+    PAIR_SWAP_ENABLED = 'pairSwapEnabled',
 }
 
 export enum ESDT_EVENTS {
@@ -51,9 +48,9 @@ export enum ESDT_EVENTS {
 }
 
 export enum PRICE_DISCOVERY_EVENTS {
-    DEPOSIT = 'deposit',
-    WITHDARW = 'withdraw',
-    REDEEM = 'redeem',
+    DEPOSIT = 'depositEvent',
+    WITHDARW = 'withdrawEvent',
+    REDEEM = 'redeemEvent',
 }
 
 export enum SIMPLE_LOCK_ENERGY_EVENTS {
@@ -63,6 +60,7 @@ export enum SIMPLE_LOCK_ENERGY_EVENTS {
 export type RawEventType = {
     address: string | undefined;
     identifier: string | undefined;
+    name?: string | undefined;
     topics?: string[];
     data?: string | undefined;
 };

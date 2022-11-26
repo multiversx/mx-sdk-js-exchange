@@ -7,8 +7,7 @@ import {
     rawSwapNoFeeEvent,
 } from '../mocks/mocked.raw.event';
 import { RemoveLiquidityEvent } from '../removeLiquidity.event';
-import { SwapFixedInputEvent } from '../swapFixedInput.event';
-import { SwapFixedOutputEvent } from '../swapFixedOutput.event';
+import { SwapEvent } from '../swap.event';
 import { SwapNoFeeEvent } from '../swapNoFee.event';
 
 describe('test pair event decoders', () => {
@@ -77,7 +76,7 @@ describe('test pair event decoders', () => {
     });
 
     it('should decode swap fixed input event', () => {
-        const swapFixedInputEvent = new SwapFixedInputEvent(
+        const swapFixedInputEvent = new SwapEvent(
             rawSwapFixedInputEvent,
         );
         expect(swapFixedInputEvent.toJSON()).toEqual({
@@ -105,7 +104,7 @@ describe('test pair event decoders', () => {
     });
 
     it('should decode swap fixed output event', () => {
-        const swapFixedOutputEvent = new SwapFixedOutputEvent(
+        const swapFixedOutputEvent = new SwapEvent(
             rawSwapFixedOutputEvent,
         );
         expect(swapFixedOutputEvent.toJSON()).toEqual({
