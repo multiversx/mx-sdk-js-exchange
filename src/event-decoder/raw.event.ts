@@ -1,4 +1,4 @@
-import { ESDT_EVENTS, RawEventType } from './generic.types';
+import { RawEventType, TRANSACTION_EVENTS } from './generic.types';
 
 export class RawEvent {
     address: string | undefined;
@@ -11,11 +11,12 @@ export class RawEvent {
         if (init) {
             Object.assign(this, init);
         }
-        if (
-            this.identifier !== ESDT_EVENTS.ESDT_LOCAL_BURN &&
-            this.identifier !== ESDT_EVENTS.ESDT_LOCAL_MINT
-        ) {
+        if (this.identifier !== undefined && !this.isTransactionEvent(this.identifier)) {
             this.name = Buffer.from(this.topics[0], 'base64').toString();
         }
+    }
+
+    private isTransactionEvent(identifier: string): boolean {
+        return (<any>Object).values(TRANSACTION_EVENTS).includes(identifier);
     }
 }

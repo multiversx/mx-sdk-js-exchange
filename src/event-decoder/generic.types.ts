@@ -42,9 +42,21 @@ export enum ROUTER_EVENTS {
     PAIR_SWAP_ENABLED = 'pairSwapEnabled',
 }
 
-export enum ESDT_EVENTS {
+export enum TRANSACTION_EVENTS {
+    ESDT_NFT_Transfer = 'ESDTNFTTransfer',
+    ESDT_NFT_Burn = 'ESDTNFTBurn',
+    ESDT_NFT_ADD_QUANTITY = 'ESDTNFTAddQuantity',
+    ESDT_NFT_CREATE = 'ESDTNFTCreate',
+    MULTI_ESDT_NFT_TRANSFER = 'MultiESDTNFTTransfer',
+    ESDT_TRANSFER = 'ESDTTransfer',
+    ESDT_BURN = 'ESDTBurn',
     ESDT_LOCAL_MINT = 'ESDTLocalMint',
     ESDT_LOCAL_BURN = 'ESDTLocalBurn',
+    ESDT_WIPE = 'ESDTWipe',
+    ESDT_FREEZE = 'ESDTFreeze',
+    TRANSFER_VALUE_ONLY = 'transferValueOnly',
+    WRITE_LOG = 'writeLog',
+    SIGNAL_ERROR = 'signalError'
 }
 
 export enum PRICE_DISCOVERY_EVENTS {
