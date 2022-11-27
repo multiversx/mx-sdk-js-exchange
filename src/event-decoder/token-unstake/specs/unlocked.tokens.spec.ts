@@ -1,9 +1,11 @@
 import { UnlockedTokensRaw } from '../mocks/mocked.raw.event';
-import { UserUnlockedTokens } from '../unlocked.tokens';
+import { UserUnlockedTokensEvent } from '../unlocked.tokens';
 
 describe('test token unstake event decoders', () => {
     it('should decode user unlock tokens event', () => {
-        const unlockTokensEvent = new UserUnlockedTokens(UnlockedTokensRaw);
+        const unlockTokensEvent = new UserUnlockedTokensEvent(
+            UnlockedTokensRaw,
+        );
         expect(unlockTokensEvent.toJSON()).toEqual({
             identifier: 'depositUserTokens',
             address:

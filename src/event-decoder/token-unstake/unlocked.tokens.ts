@@ -7,7 +7,7 @@ import { RawEvent } from '../raw.event';
 import { UserUnlockedTokensType } from './token.unstake.types';
 import { UserUnlockedTokensTopics } from './unlocked.tokens.topics';
 
-export class UserUnlockedTokens extends RawEvent {
+export class UserUnlockedTokensEvent extends RawEvent {
     readonly decodedTopics: UserUnlockedTokensTopics;
 
     readonly unstakeTokens: UnstakePair[];
@@ -15,7 +15,7 @@ export class UserUnlockedTokens extends RawEvent {
     constructor(init: RawEventType) {
         super(init);
         if (!init.topics) {
-            throw new ErrInvalidTopicsField(UserUnlockedTokens.name);
+            throw new ErrInvalidTopicsField(UserUnlockedTokensEvent.name);
         }
         this.decodedTopics = new UserUnlockedTokensTopics(init.topics);
         const rawUnstakeTokens = this.decodeEvent();
@@ -37,7 +37,7 @@ export class UserUnlockedTokens extends RawEvent {
 
     private decodeEvent() {
         if (this.data == undefined) {
-            throw new ErrInvalidDataField(UserUnlockedTokens.name);
+            throw new ErrInvalidDataField(UserUnlockedTokensEvent.name);
         }
 
         const data = Buffer.from(this.data, 'base64');

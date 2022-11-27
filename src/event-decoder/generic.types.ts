@@ -70,6 +70,10 @@ export enum SIMPLE_LOCK_ENERGY_EVENTS {
     ENERGY_UPDATED = 'energyUpdated',
 }
 
+export enum TOKEN_UNSTAKE_EVENTS {
+    USER_UNLOCKED_TOKENS = 'userUnlockedTokens',
+}
+
 export type RawEventType = {
     address: string | undefined;
     identifier: string | undefined;
