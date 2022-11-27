@@ -56,7 +56,8 @@ export enum TRANSACTION_EVENTS {
     ESDT_FREEZE = 'ESDTFreeze',
     TRANSFER_VALUE_ONLY = 'transferValueOnly',
     WRITE_LOG = 'writeLog',
-    SIGNAL_ERROR = 'signalError'
+    SIGNAL_ERROR = 'signalError',
+    COMPLETE_TX = 'completedTxEvent',
 }
 
 export enum PRICE_DISCOVERY_EVENTS {
