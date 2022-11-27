@@ -7,3 +7,4 @@ export * from './simple-lock';
 export * from './locked-token-wrapper';
 export * from './energy';
 export * from './esdt-token-payment';
+export * from './token-unstake';
