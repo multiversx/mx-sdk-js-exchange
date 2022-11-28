@@ -35,3 +35,9 @@ export class ErrInvalidAttributesField extends Err {
         super(`Invalid attributes field: ${message}`);
     }
 }
+
+export class ErrInvalidTopicsField extends Err {
+    constructor(message: string) {
+        super(`Invalid topics field: ${message}`);
+    }
+}
