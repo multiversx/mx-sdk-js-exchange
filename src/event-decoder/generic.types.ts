@@ -17,9 +17,9 @@ export enum FEES_COLLECTOR_EVENTS {
 }
 
 export enum WEEKLY_REWARDS_SPLITTING_EVENTS {
-    UPDATE_GLOBAL_AMOUNTS = 'update_global_mounts',
-    UPDATE_USER_ENERGY = 'update_user_energy',
-    CLAIM_MULTI = 'claim_multi',
+    UPDATE_GLOBAL_AMOUNTS = 'update_global_amounts_event',
+    UPDATE_USER_ENERGY = 'update_user_energy_event',
+    CLAIM_MULTI = 'claim_multi_event',
 }
 
 export enum PROXY_EVENTS {
