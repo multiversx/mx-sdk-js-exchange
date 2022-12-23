@@ -1,6 +1,6 @@
 {
     "name": "@elrondnetwork/erdjs-dex",
-    "version": "0.2.12-alpha",
+    "version": "0.2.13",
     "description": "Utilities modules for xExchange interactions",
     "author": "ElrondNetwork",
     "repository": {
