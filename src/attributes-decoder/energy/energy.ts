@@ -1,4 +1,5 @@
 import {
+    BigIntType,
     BigUIntType,
     BinaryCodec,
     FieldDefinition,
@@ -50,7 +51,7 @@ export class Energy {
     }
     static getStructure(): StructType {
         return new StructType('Energy', [
-            new FieldDefinition('amount', '', new BigUIntType()),
+            new FieldDefinition('amount', '', new BigIntType()),
             new FieldDefinition('last_update_epoch', '', new U64Type()),
             new FieldDefinition('total_locked_tokens', '', new BigUIntType()),
         ]);
