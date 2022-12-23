@@ -1,6 +1,6 @@
 import { Address } from '@elrondnetwork/erdjs/out';
 import BigNumber from 'bignumber.js';
-import { GenericEventType } from './generic.types';
+import { GenericEventType, RawEventType } from './generic.types';
 import { RawEvent } from './raw.event';
 
 export class GenericEvent extends RawEvent {
@@ -9,12 +9,8 @@ export class GenericEvent extends RawEvent {
     protected epoch: BigNumber | undefined;
     protected timestamp: BigNumber | undefined;
 
-    constructor(init?: Partial<RawEvent>) {
+    constructor(init: RawEventType) {
         super(init);
-
-        if (init) {
-            Object.assign(this, init);
-        }
     }
 
     getAddress(): string | undefined {
@@ -32,6 +28,7 @@ export class GenericEvent extends RawEvent {
     toJSON(): GenericEventType {
         return {
             address: this.address,
+            identifier: this.identifier,
             caller: this.caller?.toString(),
             block: this.block?.toNumber(),
             epoch: this.epoch?.toNumber(),

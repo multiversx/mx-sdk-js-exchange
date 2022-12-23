@@ -8,6 +8,7 @@ import {
 import BigNumber from 'bignumber.js';
 import { MAX_PERCENTAGE_PRICE_DISCOVERY } from '../../constants';
 import { GenericToken } from '../../generic.token';
+import { RawEventType } from '../generic.types';
 import { PriceDiscoveryEvent } from './price.discovery.event';
 import { PriceDiscoveryPhase } from './price.discovery.phase';
 import { DepositEventType } from './price.discovery.types';
@@ -20,7 +21,7 @@ export class DepositEvent extends PriceDiscoveryEvent {
     launchedTokenPrice: BigNumber | undefined;
     currentPhase: PriceDiscoveryPhase | undefined;
 
-    constructor(init?: Partial<PriceDiscoveryEvent>) {
+    constructor(init: RawEventType) {
         super(init);
 
         const decodedEvent = this.decodeEvent();

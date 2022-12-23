@@ -11,10 +11,11 @@ import BigNumber from 'bignumber.js';
 import { ErrInvalidDataField } from '../../errors';
 import { GenericToken } from '../../generic.token';
 import { GenericEvent } from '../generic.event';
+import { RawEventType } from '../generic.types';
 import { PairEventTopics } from './pair.event.topics';
 import { SwapEventType } from './pair.types';
 
-export class SwapFixedInputEvent extends GenericEvent {
+export class SwapEvent extends GenericEvent {
     private decodedTopics: PairEventTopics;
 
     private tokenIn: GenericToken | undefined;
@@ -23,7 +24,7 @@ export class SwapFixedInputEvent extends GenericEvent {
     tokenInReserves: BigNumber | undefined;
     tokenOutReserves: BigNumber | undefined;
 
-    constructor(init?: Partial<GenericEvent>) {
+    constructor(init: RawEventType) {
         super(init);
         this.decodedTopics = new PairEventTopics(this.topics);
         const decodedEvent = this.decodeEvent();
@@ -72,7 +73,7 @@ export class SwapFixedInputEvent extends GenericEvent {
 
     private decodeEvent() {
         if (this.data == undefined) {
-            throw new ErrInvalidDataField(SwapFixedInputEvent.name);
+            throw new ErrInvalidDataField(SwapEvent.name);
         }
 
         const data = Buffer.from(this.data, 'base64');

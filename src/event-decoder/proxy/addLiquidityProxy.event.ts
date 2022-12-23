@@ -7,15 +7,15 @@ import {
     TokenIdentifierType,
     U64Type,
 } from '@elrondnetwork/erdjs/out';
-import { GenericEvent } from '../generic.event';
 import { PairProxyEvent } from './pairProxy.event';
 import { AddLiquidityProxyEventType } from './pair.proxy.types';
 import { WrappedLpTokenAttributes } from '../../attributes-decoder/proxy/wrappedLp.token';
+import { RawEventType } from '../generic.types';
 
 export class AddLiquidityProxyEvent extends PairProxyEvent {
     private createdWithMerge: boolean | undefined;
 
-    constructor(init?: Partial<GenericEvent>) {
+    constructor(init: RawEventType) {
         super(init);
         const decodedEvent = this.decodeEvent();
         Object.assign(this.decodeEvent);

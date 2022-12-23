@@ -7,8 +7,7 @@ import {
     rawSwapNoFeeEvent,
 } from '../mocks/mocked.raw.event';
 import { RemoveLiquidityEvent } from '../removeLiquidity.event';
-import { SwapFixedInputEvent } from '../swapFixedInput.event';
-import { SwapFixedOutputEvent } from '../swapFixedOutput.event';
+import { SwapEvent } from '../swap.event';
 import { SwapNoFeeEvent } from '../swapNoFee.event';
 
 describe('test pair event decoders', () => {
@@ -17,6 +16,7 @@ describe('test pair event decoders', () => {
         expect(addLiquidityEvent.toJSON()).toEqual({
             address:
                 'erd1qqqqqqqqqqqqqpgquu5rsa4ee6l4azz6vdu4hjp8z4p6tt8m0n4suht3dy',
+            identifier: 'addLiquidity',
             caller: 'erd1x39tc3q3nn72ecjnmcz7x0qp09kp97t080x99dgyhx7zh95j0n4szskhlv',
             block: 505497,
             epoch: 422,
@@ -49,6 +49,7 @@ describe('test pair event decoders', () => {
         expect(removeLiquidityEvent.toJSON()).toEqual({
             address:
                 'erd1qqqqqqqqqqqqqpgquu5rsa4ee6l4azz6vdu4hjp8z4p6tt8m0n4suht3dy',
+            identifier: 'removeLiquidity',
             caller: 'erd1x39tc3q3nn72ecjnmcz7x0qp09kp97t080x99dgyhx7zh95j0n4szskhlv',
             block: 517935,
             epoch: 432,
@@ -75,12 +76,13 @@ describe('test pair event decoders', () => {
     });
 
     it('should decode swap fixed input event', () => {
-        const swapFixedInputEvent = new SwapFixedInputEvent(
+        const swapFixedInputEvent = new SwapEvent(
             rawSwapFixedInputEvent,
         );
         expect(swapFixedInputEvent.toJSON()).toEqual({
             address:
                 'erd1qqqqqqqqqqqqqpgquu5rsa4ee6l4azz6vdu4hjp8z4p6tt8m0n4suht3dy',
+            identifier: 'swapTokensFixedInput',
             caller: 'erd1x39tc3q3nn72ecjnmcz7x0qp09kp97t080x99dgyhx7zh95j0n4szskhlv',
             block: 517948,
             epoch: 432,
@@ -102,12 +104,13 @@ describe('test pair event decoders', () => {
     });
 
     it('should decode swap fixed output event', () => {
-        const swapFixedOutputEvent = new SwapFixedOutputEvent(
+        const swapFixedOutputEvent = new SwapEvent(
             rawSwapFixedOutputEvent,
         );
         expect(swapFixedOutputEvent.toJSON()).toEqual({
             address:
                 'erd1qqqqqqqqqqqqqpgquu5rsa4ee6l4azz6vdu4hjp8z4p6tt8m0n4suht3dy',
+            identifier: 'swapTokensFixedOutput',
             caller: 'erd1x39tc3q3nn72ecjnmcz7x0qp09kp97t080x99dgyhx7zh95j0n4szskhlv',
             block: 517964,
             epoch: 432,
@@ -133,6 +136,7 @@ describe('test pair event decoders', () => {
         expect(swapNoFeeEvent.toJSON()).toEqual({
             address:
                 'erd1qqqqqqqqqqqqqpgquu5rsa4ee6l4azz6vdu4hjp8z4p6tt8m0n4suht3dy',
+            identifier: 'swapNoFeeAndForward',
             caller: 'erd1qqqqqqqqqqqqqpgqq67uv84ma3cekpa55l4l68ajzhq8qm3u0n4s20ecvx',
             block: 517978,
             epoch: 432,

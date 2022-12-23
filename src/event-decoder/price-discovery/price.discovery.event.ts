@@ -1,5 +1,6 @@
 import { BinaryCodec, StructType } from '@elrondnetwork/erdjs/out';
 import { ErrInvalidDataField } from '../../errors';
+import { RawEventType } from '../generic.types';
 import { RawEvent } from '../raw.event';
 import { PriceDiscoveryEventTopics } from './price.discovery.event.topics';
 import { PriceDiscoveryEventType } from './price.discovery.types';
@@ -7,7 +8,7 @@ import { PriceDiscoveryEventType } from './price.discovery.types';
 export class PriceDiscoveryEvent extends RawEvent {
     private decodedTopics: PriceDiscoveryEventTopics;
 
-    constructor(init?: Partial<RawEvent>) {
+    constructor(init: RawEventType) {
         super(init);
         Object.assign(this, init);
         this.decodedTopics = new PriceDiscoveryEventTopics(this.topics);

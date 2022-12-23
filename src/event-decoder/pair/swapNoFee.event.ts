@@ -11,6 +11,7 @@ import {
 import { ErrInvalidDataField } from '../../errors';
 import { GenericToken } from '../../generic.token';
 import { GenericEvent } from '../generic.event';
+import { RawEventType } from '../generic.types';
 import { SwapNoFeeTopics } from './pair.event.topics';
 import { SwapNoFeeEventType } from './pair.types';
 
@@ -21,7 +22,7 @@ export class SwapNoFeeEvent extends GenericEvent {
     private tokenOut: GenericToken | undefined;
     private destination: Address | undefined;
 
-    constructor(init?: Partial<GenericEvent>) {
+    constructor(init: RawEventType) {
         super(init);
         this.decodedTopics = new SwapNoFeeTopics(this.topics);
         const decodedEvent = this.decodeEvent();
