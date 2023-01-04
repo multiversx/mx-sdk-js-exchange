@@ -61,6 +61,7 @@ export class LockedFarmTokenAttributes {
                 new EnumType('FarmType', [
                     new EnumVariantDefinition('SimpleFarm', 0),
                     new EnumVariantDefinition('FarmWithLockedRewards', 1),
+                    new EnumVariantDefinition('FarmWithBoostedRewards', 2),
                 ]),
             ),
             new FieldDefinition('farmTokenID', '', new TokenIdentifierType()),
