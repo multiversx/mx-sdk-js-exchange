@@ -1,11 +1,11 @@
 {
-    "name": "@elrondnetwork/erdjs-dex",
-    "version": "0.2.14",
+    "name": "@multiversx/erdjs-dex",
+    "version": "0.2.15",
     "description": "Utilities modules for xExchange interactions",
-    "author": "ElrondNetwork",
+    "author": "MultiversX",
     "repository": {
         "type": "git",
-        "url": "https://github.com/ElrondNetwork/elrond-sdk-erdjs-dex.git"
+        "url": "https://github.com/multiversx/mx-sdk-erdjs-dex.git"
     },
     "license": "MIT",
     "files": [
