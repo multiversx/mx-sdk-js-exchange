@@ -1,17 +1,17 @@
-# Elrond SDK for JavaScript: Maiar Exchange utilities
+# MultiversX SDK for JavaScript and TypeScript: xExchange utilities
 
-Utilities modules for Maiar Exchange interactions
+Utilities modules for xExchange interactions
 
 ## Distribution
 
-[npm](https://www.npmjs.com/package/@elrondnetwork/erdjs-dex)
+[npm](https://www.npmjs.com/package/@multiversx/erdjs-dex)
 
 ## Installation
 
-`erdjs-dex` is delivered via [npm](https://www.npmjs.com/package/@elrondnetwork/erdjs-dex), therefore it can be installed as follows:
+`erdjs-dex` is delivered via [npm](https://www.npmjs.com/package/@multiversx/erdjs-dex), therefore it can be installed as follows:
 
 ```
-npm install @elrondnetwork/erdjs-dex
+npm install @multiversx/erdjs-dex
 ```
 
 ### Building the library
