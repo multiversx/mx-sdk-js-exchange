@@ -5,7 +5,7 @@ import {
     FieldDefinition,
     StructType,
     U64Type,
-} from '@elrondnetwork/erdjs/out';
+} from '@multiversx/sdk-core/out';
 import BigNumber from 'bignumber.js';
 import { EnergyType } from './energy.type';
 

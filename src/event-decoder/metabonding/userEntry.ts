@@ -3,7 +3,7 @@ import {
     FieldDefinition,
     U64Type,
     BigUIntType,
-} from '@elrondnetwork/erdjs/out';
+} from '@multiversx/sdk-core/out';
 import { UserEntryType } from './metabonding.types';
 
 export class UserEntry {

@@ -3,15 +3,13 @@ import {
     FieldDefinition,
     StructType,
     U64Type,
-} from '@elrondnetwork/erdjs/out';
+} from '@multiversx/sdk-core/out';
 import { WrappedLockedTokenType } from './wrapped.lock.token.types';
 
 export class WrappedLockedTokenAttributes {
     lockedTokenNonce: number;
 
-    constructor(init: {
-        lockedTokenNonce: number;
-    }) {
+    constructor(init: { lockedTokenNonce: number }) {
         this.lockedTokenNonce = init.lockedTokenNonce;
     }
 
@@ -35,7 +33,9 @@ export class WrappedLockedTokenAttributes {
 
         const structType = WrappedLockedTokenAttributes.getStructure();
         const [decoded] = codec.decodeNested(attributesBuffer, structType);
-        return WrappedLockedTokenAttributes.fromDecodedAttributes(decoded.valueOf());
+        return WrappedLockedTokenAttributes.fromDecodedAttributes(
+            decoded.valueOf(),
+        );
     }
 
     static getStructure(): StructType {

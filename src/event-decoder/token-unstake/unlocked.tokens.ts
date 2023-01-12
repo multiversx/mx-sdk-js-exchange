@@ -1,4 +1,4 @@
-import { BinaryCodec, ListType } from '@elrondnetwork/erdjs/out';
+import { BinaryCodec, ListType } from '@multiversx/sdk-core/out';
 import { UnstakePair } from '../../attributes-decoder/token-unstake/unstake.pair';
 import { UnstakePairType } from '../../attributes-decoder/token-unstake/unstake.pair.type';
 import { ErrInvalidDataField, ErrInvalidTopicsField } from '../../errors';

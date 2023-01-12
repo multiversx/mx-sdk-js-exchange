@@ -3,7 +3,7 @@ import {
     EnumVariantDefinition,
     FieldDefinition,
     BigUIntType,
-} from '@elrondnetwork/erdjs/out';
+} from '@multiversx/sdk-core/out';
 import { PhaseType } from './price.discovery.types';
 
 export class PriceDiscoveryPhase {

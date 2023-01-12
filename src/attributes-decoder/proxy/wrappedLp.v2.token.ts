@@ -4,7 +4,7 @@ import {
     FieldDefinition,
     StructType,
     TokenIdentifierType,
-} from '@elrondnetwork/erdjs';
+} from '@multiversx/sdk-core';
 import { EsdtTokenPayment } from '../esdt-token-payment/esdt.token.payment';
 import { WrappedLpTokenAttributesTypeV2 } from './proxy.token.types';
 

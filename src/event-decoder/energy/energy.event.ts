@@ -2,7 +2,7 @@ import {
     BinaryCodec,
     FieldDefinition,
     StructType,
-} from '@elrondnetwork/erdjs/out';
+} from '@multiversx/sdk-core/out';
 import { Energy } from '../../attributes-decoder/energy/energy';
 import { ErrInvalidDataField } from '../../errors';
 import { RawEventType } from '../generic.types';

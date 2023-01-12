@@ -1,5 +1,5 @@
-import { Address } from '@elrondnetwork/erdjs/out';
-import { Energy, EnergyType } from "../../attributes-decoder";
+import { Address } from '@multiversx/sdk-core/out';
+import { Energy, EnergyType } from '../../attributes-decoder';
 
 export class UserWeeklyRewardsSplittingEventTopics {
     readonly eventName: string;
@@ -22,7 +22,7 @@ export class UserWeeklyRewardsSplittingEventTopics {
             eventName: this.eventName,
             caller: this.caller,
             energy: this.energy,
-            currentWeek: this.currentWeek
+            currentWeek: this.currentWeek,
         };
     }
 }

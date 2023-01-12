@@ -6,7 +6,7 @@ import {
     StructType,
     TokenIdentifierType,
     U64Type,
-} from '@elrondnetwork/erdjs/out';
+} from '@multiversx/sdk-core/out';
 import { PairProxyEvent } from './pairProxy.event';
 import { AddLiquidityProxyEventType } from './pair.proxy.types';
 import { WrappedLpTokenAttributes } from '../../attributes-decoder/proxy/wrappedLp.token';

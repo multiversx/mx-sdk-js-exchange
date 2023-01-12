@@ -1,4 +1,4 @@
-import { Address } from '@elrondnetwork/erdjs/out';
+import { Address } from '@multiversx/sdk-core/out';
 import BigNumber from 'bignumber.js';
 import { GenericEventType, RawEventType } from './generic.types';
 import { RawEvent } from './raw.event';

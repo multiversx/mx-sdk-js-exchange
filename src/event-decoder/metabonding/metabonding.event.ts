@@ -1,4 +1,4 @@
-import { Address, BinaryCodec, OptionType } from '@elrondnetwork/erdjs/out';
+import { Address, BinaryCodec, OptionType } from '@multiversx/sdk-core/out';
 import { ErrInvalidDataField } from '../../errors';
 import { RawEventType } from '../generic.types';
 import { RawEvent } from '../raw.event';

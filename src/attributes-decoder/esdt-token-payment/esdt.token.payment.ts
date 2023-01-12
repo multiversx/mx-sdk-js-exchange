@@ -7,7 +7,7 @@ import {
     StructType,
     TokenIdentifierType,
     U64Type,
-} from '@elrondnetwork/erdjs/out';
+} from '@multiversx/sdk-core/out';
 import { EsdtTokenPaymentType } from './esdt.token.payment.type';
 
 export class EsdtTokenPayment {

@@ -2,7 +2,7 @@ import {
     BinaryCodec,
     FieldDefinition,
     StructType,
-} from '@elrondnetwork/erdjs/out';
+} from '@multiversx/sdk-core/out';
 import { EsdtTokenPayment } from '../esdt-token-payment/esdt.token.payment';
 import { WrappedFarmTokenAttributesTypeV2 } from './proxy.token.types';
 
