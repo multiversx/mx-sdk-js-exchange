@@ -1,6 +1,6 @@
 {
     "name": "@multiversx/sdk-dex",
-    "version": "0.2.15",
+    "version": "0.2.16",
     "description": "Utilities modules for xExchange interactions",
     "author": "MultiversX",
     "repository": {
