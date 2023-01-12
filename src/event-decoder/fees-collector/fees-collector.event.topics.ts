@@ -1,5 +1,5 @@
-import { Address } from '@elrondnetwork/erdjs/out';
-import { EsdtTokenPayment } from "../../attributes-decoder";
+import { Address } from '@multiversx/sdk-core/out';
+import { EsdtTokenPayment } from '../../attributes-decoder';
 
 export class FeesCollectorEventTopics {
     readonly eventName: string;
@@ -22,7 +22,7 @@ export class FeesCollectorEventTopics {
             eventName: this.eventName,
             caller: this.caller.bech32(),
             payment: this.payment.toJSON(),
-            currentWeek: this.currentWeek
+            currentWeek: this.currentWeek,
         };
     }
 }

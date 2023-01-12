@@ -5,7 +5,7 @@ import {
     StructType,
     TokenIdentifierType,
     U64Type,
-} from '@elrondnetwork/erdjs';
+} from '@multiversx/sdk-core';
 import { WrappedLpAttributesType } from './proxy.token.types';
 
 export class WrappedLpTokenAttributes {

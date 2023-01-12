@@ -6,7 +6,7 @@ import {
     StructType,
     U64Type,
     U8Type,
-} from '@elrondnetwork/erdjs/out';
+} from '@multiversx/sdk-core/out';
 import BigNumber from 'bignumber.js';
 import {
     LockedAssetAttributesType,

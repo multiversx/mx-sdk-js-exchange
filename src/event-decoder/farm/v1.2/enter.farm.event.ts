@@ -6,7 +6,7 @@ import {
     StructType,
     TokenIdentifierType,
     U64Type,
-} from '@elrondnetwork/erdjs/out';
+} from '@multiversx/sdk-core/out';
 import BigNumber from 'bignumber.js';
 import { FarmTokenAttributesV1_2 } from '../../../attributes-decoder/farm/farm.v1.2.token';
 import { RawEventType } from '../../generic.types';

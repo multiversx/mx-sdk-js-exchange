@@ -6,7 +6,7 @@ import {
     StructType,
     TokenIdentifierType,
     U64Type,
-} from '@elrondnetwork/erdjs/out';
+} from '@multiversx/sdk-core/out';
 import { LockedFarmTokenType } from './simple.lock.token.types';
 
 export class LockedFarmTokenAttributes {

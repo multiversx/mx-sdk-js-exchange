@@ -6,7 +6,7 @@ import {
     StructType,
     TokenIdentifierType,
     U64Type,
-} from '@elrondnetwork/erdjs/out';
+} from '@multiversx/sdk-core/out';
 import { WrappedLpTokenAttributes } from '../../attributes-decoder/proxy/wrappedLp.token';
 import { ErrInvalidDataField } from '../../errors';
 import { GenericToken } from '../../generic.token';

@@ -5,7 +5,7 @@ import {
     FieldDefinition,
     StructType,
     TokenIdentifierType,
-} from '@elrondnetwork/erdjs/out';
+} from '@multiversx/sdk-core/out';
 import { ErrInvalidDataField } from '../../errors';
 import { GenericEvent } from '../generic.event';
 import { RawEventType } from '../generic.types';

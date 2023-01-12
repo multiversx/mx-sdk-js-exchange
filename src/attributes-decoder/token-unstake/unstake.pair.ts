@@ -3,7 +3,7 @@ import {
     FieldDefinition,
     StructType,
     U64Type,
-} from '@elrondnetwork/erdjs/out';
+} from '@multiversx/sdk-core/out';
 import { EsdtTokenPayment } from '../esdt-token-payment';
 import { UnstakePairType } from './unstake.pair.type';
 

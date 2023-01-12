@@ -3,7 +3,7 @@ import {
     BinaryCodec,
     FieldDefinition,
     StructType,
-} from '@elrondnetwork/erdjs/out';
+} from '@multiversx/sdk-core/out';
 import { FarmTokenAttributes } from './farm.token';
 import { FarmTokenAttributesTypeV2 } from './farm.token.types';
 

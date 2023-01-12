@@ -6,7 +6,7 @@ import {
     StructType,
     U64Type,
     U8Type,
-} from '@elrondnetwork/erdjs';
+} from '@multiversx/sdk-core';
 import { FarmTokenAttributesV1_3 } from './farm.v1.3.token';
 import { FarmTokenAttributesTypeV1_2 } from './farm.token.types';
 

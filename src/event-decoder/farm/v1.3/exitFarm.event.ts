@@ -5,7 +5,7 @@ import {
     StructType,
     TokenIdentifierType,
     U64Type,
-} from '@elrondnetwork/erdjs/out';
+} from '@multiversx/sdk-core/out';
 import { FarmTokenAttributesV1_3 } from '../../../attributes-decoder/farm/farm.v1.3.token';
 import { RawEventType } from '../../generic.types';
 import { EnterFarmEventV1_3 } from './enterFarm.event';

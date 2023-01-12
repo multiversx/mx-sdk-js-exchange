@@ -1,4 +1,4 @@
-import { BinaryCodec, StructType } from '@elrondnetwork/erdjs/out';
+import { BinaryCodec, StructType } from '@multiversx/sdk-core/out';
 import BigNumber from 'bignumber.js';
 import { ErrInvalidDataField } from '../../errors';
 import { GenericToken } from '../../generic.token';

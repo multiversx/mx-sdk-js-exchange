@@ -4,7 +4,7 @@ import {
     FieldDefinition,
     StructType,
     U64Type,
-} from '@elrondnetwork/erdjs/out';
+} from '@multiversx/sdk-core/out';
 import { FarmTokenAttributesType } from './farm.token.types';
 
 export class FarmTokenAttributes {

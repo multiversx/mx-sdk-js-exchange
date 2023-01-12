@@ -4,7 +4,7 @@ import {
     StructType,
     TokenIdentifierType,
     U64Type,
-} from '@elrondnetwork/erdjs/out';
+} from '@multiversx/sdk-core/out';
 import BigNumber from 'bignumber.js';
 import { MAX_PERCENTAGE_PRICE_DISCOVERY } from '../../constants';
 import { GenericToken } from '../../generic.token';
