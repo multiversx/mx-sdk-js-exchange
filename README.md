@@ -4,14 +4,14 @@ Utilities modules for xExchange interactions
 
 ## Distribution
 
-[npm](https://www.npmjs.com/package/@multiversx/erdjs-dex)
+[npm](https://www.npmjs.com/package/@multiversx/sdk-exchange)
 
 ## Installation
 
-`erdjs-dex` is delivered via [npm](https://www.npmjs.com/package/@multiversx/erdjs-dex), therefore it can be installed as follows:
+`sdk-exchange` is delivered via [npm](https://www.npmjs.com/package/@multiversx/sdk-exchange), therefore it can be installed as follows:
 
 ```
-npm install @multiversx/erdjs-dex
+npm install @multiversx/sdk-exchange
 ```
 
 ### Building the library
