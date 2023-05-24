@@ -41,11 +41,11 @@ class LockedFunds {
 }
 
 class EscrowBaseEvent extends RawEvent {
-    decodedTopics: EscrowEventTopics;
+    readonly decodedTopics: EscrowEventTopics;
 
-    sender: Address;
-    receiver: Address;
-    lockedFunds: LockedFunds;
+    readonly sender: Address;
+    readonly receiver: Address;
+    readonly lockedFunds: LockedFunds;
 
     constructor(init: RawEventType) {
         super(init);
@@ -81,7 +81,7 @@ class EscrowBaseEvent extends RawEvent {
         return decoded.valueOf();
     }
 
-    getStructure(): StructType {
+    protected getStructure(): StructType {
         return new StructType('XMEXTransferEvent', [
             new FieldDefinition('sender', '', new AddressType()),
             new FieldDefinition('receiver', '', new AddressType()),
