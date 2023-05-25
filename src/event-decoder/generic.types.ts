@@ -74,6 +74,12 @@ export enum TOKEN_UNSTAKE_EVENTS {
     USER_UNLOCKED_TOKENS = 'userUnlockedTokens',
 }
 
+export enum ESCROW_EVENTS {
+    LOCK_FUNDS = 'lock_funds_event',
+    WITHDRAW = 'withdraw_event',
+    CANCEL_TRANSFER = 'cancel_transfer_event',
+}
+
 export type RawEventType = {
     address: string | undefined;
     identifier: string | undefined;
