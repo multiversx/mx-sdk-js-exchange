@@ -80,6 +80,13 @@ export enum ESCROW_EVENTS {
     CANCEL_TRANSFER = 'cancel_transfer_event',
 }
 
+export enum GOVERNANCE_EVENTS {
+    UP = "upVoteCast",
+    DOWN = "downVoteCast",
+    DOWN_VETO = "downVetoVoteCast",
+    ABSTAIN = "abstainVoteCast",
+}
+
 export type RawEventType = {
     address: string | undefined;
     identifier: string | undefined;
