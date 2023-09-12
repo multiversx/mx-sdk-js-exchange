@@ -10,6 +10,7 @@ export * from './escrow';
 export * from './fees-collector';
 export * from './weekly-rewards-splitting';
 export * from './token-unstake';
+export * from './governance';
 export * from './generic.event';
 export * from './generic.types';
 export * from './raw.event';
