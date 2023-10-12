@@ -5,6 +5,7 @@ export * from './pair';
 export * from './price-discovery';
 export * from './proxy';
 export * from './router';
+export * from './staking';
 export * from './energy';
 export * from './escrow';
 export * from './fees-collector';
