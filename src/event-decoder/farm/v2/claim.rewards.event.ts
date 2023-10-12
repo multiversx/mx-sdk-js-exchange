@@ -57,13 +57,13 @@ export class ClaimRewardsEventV2 extends RawEvent {
 
     toJSON(): ClaimRewardsEventTypeV2 {
         return {
-            oldFarmToken: this.newFarmToken.toJSON(),
+            oldFarmToken: this.oldFarmToken.toJSON(),
             newFarmToken: this.newFarmToken.toJSON(),
             farmSupply: this.farmSupply.toFixed(),
             rewardTokens: this.rewardTokens.toJSON(),
             rewardTokenReserves: this.rewardTokenReserves.toFixed(),
             oldFarmAttributes: this.oldFarmAttributes.toJSON(),
-            newFarmAttributes: this.oldFarmAttributes.toJSON(),
+            newFarmAttributes: this.newFarmAttributes.toJSON(),
             createdWithMerge: this.createdWithMerge,
         };
     }
