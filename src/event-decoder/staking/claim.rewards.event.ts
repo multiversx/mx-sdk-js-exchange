@@ -7,33 +7,33 @@ import {
     StructType,
     TokenIdentifierType,
 } from '@multiversx/sdk-core/out';
-import { ErrInvalidDataField } from '../../../errors';
-import { RawEventType } from '../../generic.types';
-import { RawEvent } from '../../raw.event';
-import { FarmEventsTopicsV2 } from './farm.event.topics.v2';
+import { ErrInvalidDataField } from '../../errors';
+import { RawEventType } from '../generic.types';
+import { RawEvent } from '../raw.event';
 import {
     EsdtTokenPayment,
-    FarmTokenAttributesV2,
-} from '../../../attributes-decoder';
+    StakingFarmTokenAttributes,
+} from '../../attributes-decoder';
 import BigNumber from 'bignumber.js';
-import { ClaimRewardsEventTypeV2 } from './farm.v2.types';
+import { StakingEventsTopics } from './staking.event.topics';
+import { StakeClaimRewardsEventType } from './staking.types';
 
-export class ClaimRewardsEventV2 extends RawEvent {
-    readonly decodedTopics: FarmEventsTopicsV2;
+export class StakeClaimRewardsEvent extends RawEvent {
+    readonly decodedTopics: StakingEventsTopics;
 
     readonly oldFarmToken: EsdtTokenPayment;
     readonly newFarmToken: EsdtTokenPayment;
     readonly farmSupply: BigNumber;
     readonly rewardTokens: EsdtTokenPayment;
     readonly rewardTokenReserves: BigNumber;
-    readonly oldFarmAttributes: FarmTokenAttributesV2;
-    readonly newFarmAttributes: FarmTokenAttributesV2;
+    readonly oldFarmAttributes: StakingFarmTokenAttributes;
+    readonly newFarmAttributes: StakingFarmTokenAttributes;
     readonly createdWithMerge: boolean;
 
     constructor(init: RawEventType) {
         super(init);
 
-        this.decodedTopics = new FarmEventsTopicsV2(this.topics);
+        this.decodedTopics = new StakingEventsTopics(this.topics);
         const decodedEvent = this.decodeEvent();
         this.oldFarmToken = EsdtTokenPayment.fromDecodedAttributes(
             decodedEvent.old_farm_token,
@@ -46,16 +46,16 @@ export class ClaimRewardsEventV2 extends RawEvent {
             decodedEvent.reward_tokens,
         );
         this.rewardTokenReserves = decodedEvent.reward_reserve;
-        this.oldFarmAttributes = FarmTokenAttributesV2.fromAttributes(
+        this.oldFarmAttributes = StakingFarmTokenAttributes.fromAttributes(
             Buffer.from(decodedEvent.old_farm_attributes).toString('base64'),
         );
-        this.newFarmAttributes = FarmTokenAttributesV2.fromAttributes(
+        this.newFarmAttributes = StakingFarmTokenAttributes.fromAttributes(
             Buffer.from(decodedEvent.new_farm_attributes).toString('base64'),
         );
         this.createdWithMerge = decodedEvent.created_with_merge;
     }
 
-    toJSON(): ClaimRewardsEventTypeV2 {
+    toJSON(): StakeClaimRewardsEventType {
         return {
             oldFarmToken: this.oldFarmToken.toJSON(),
             newFarmToken: this.newFarmToken.toJSON(),
@@ -70,7 +70,7 @@ export class ClaimRewardsEventV2 extends RawEvent {
 
     decodeEvent() {
         if (this.data == undefined) {
-            throw new ErrInvalidDataField(ClaimRewardsEventV2.name);
+            throw new ErrInvalidDataField(StakeClaimRewardsEvent.name);
         }
 
         const data = Buffer.from(this.data, 'base64');

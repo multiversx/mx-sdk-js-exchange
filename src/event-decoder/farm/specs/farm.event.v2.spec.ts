@@ -72,7 +72,7 @@ describe('test farm v2 event decoders', () => {
         expect(decodedEvent.toJSON()).toEqual({
             oldFarmToken: {
                 tokenIdentifier: 'EGLDMEXFL-c2521e',
-                tokenNonce: 368031,
+                tokenNonce: 355083,
                 amount: '884549960938460528',
             },
             newFarmToken: {
@@ -96,7 +96,7 @@ describe('test farm v2 event decoders', () => {
                     'erd1x30muxqm232uwhswk52vl5a0lh958hy8hx66e6ehwfrpua8usdzqnu80n9',
             },
             newFarmAttributes: {
-                rewardPerShare: '681011982950214975',
+                rewardPerShare: '716810673355886049',
                 enteringEpoch: 866,
                 compoundedReward: '0',
                 currentFarmAmount: '884549960938460528',
