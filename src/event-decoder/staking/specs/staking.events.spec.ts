@@ -36,7 +36,6 @@ describe('test staking event decoders', () => {
 
     it('should decode unstake event', () => {
         const decodedEvent = new UnstakeEvent(rawUnstakeEvent);
-        console.log(decodedEvent.toJSON());
         expect(decodedEvent.toJSON()).toEqual({
             farmingToken: {
                 tokenIdentifier: 'SUTK-15988a',
