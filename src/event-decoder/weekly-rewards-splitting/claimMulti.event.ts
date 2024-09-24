@@ -1,4 +1,4 @@
-import { BinaryCodec, ListType } from '@multiversx/sdk-core/out';
+import { BinaryCodec, ListType } from '@multiversx/sdk-core';
 import { UserWeeklyRewardsSplittingEventTopics } from './user-weekly-rewards-splitting.event.topics';
 import { EsdtTokenPayment } from '../../attributes-decoder';
 import { ClaimMultiEventType } from './weekly-rewards-splitting.types';

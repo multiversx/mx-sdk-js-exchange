@@ -1,4 +1,4 @@
-import { Address } from '@multiversx/sdk-core/out';
+import { Address } from '@multiversx/sdk-core';
 import { UnlockedTokensTopicsType } from './token.unstake.types';
 
 export class UserUnlockedTokensTopics {

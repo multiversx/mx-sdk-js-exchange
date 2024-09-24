@@ -1,8 +1,4 @@
-import {
-    BinaryCodec,
-    FieldDefinition,
-    StructType,
-} from '@multiversx/sdk-core/out';
+import { BinaryCodec, FieldDefinition, StructType } from '@multiversx/sdk-core';
 import { EsdtTokenPayment } from '../esdt-token-payment/esdt.token.payment';
 import { WrappedFarmTokenAttributesTypeV2 } from './proxy.token.types';
 

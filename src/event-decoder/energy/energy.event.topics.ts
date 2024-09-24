@@ -1,4 +1,4 @@
-import { Address } from '@multiversx/sdk-core/out';
+import { Address } from '@multiversx/sdk-core';
 import { EnergyEventTopicsType } from './energy.event.types';
 
 export class EnergyEventTopics {

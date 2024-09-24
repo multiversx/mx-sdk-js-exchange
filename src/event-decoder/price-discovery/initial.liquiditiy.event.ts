@@ -3,7 +3,7 @@ import {
     FieldDefinition,
     StructType,
     TokenIdentifierType,
-} from '@multiversx/sdk-core/out';
+} from '@multiversx/sdk-core';
 import { GenericToken } from '../../generic.token';
 import { RawEventType } from '../generic.types';
 import { PriceDiscoveryEvent } from './price.discovery.event';

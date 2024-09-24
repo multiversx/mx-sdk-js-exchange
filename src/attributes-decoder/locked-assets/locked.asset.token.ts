@@ -6,7 +6,7 @@ import {
     StructType,
     U64Type,
     U8Type,
-} from '@multiversx/sdk-core/out';
+} from '@multiversx/sdk-core';
 import BigNumber from 'bignumber.js';
 import {
     LockedAssetAttributesType,

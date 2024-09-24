@@ -3,7 +3,7 @@ import {
     FieldDefinition,
     StructType,
     U64Type,
-} from '@multiversx/sdk-core/out';
+} from '@multiversx/sdk-core';
 import { WrappedLockedTokenType } from './wrapped.lock.token.types';
 
 export class WrappedLockedTokenAttributes {

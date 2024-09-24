@@ -6,7 +6,7 @@ import {
     StructType,
     TokenIdentifierType,
     U64Type,
-} from '@multiversx/sdk-core/out';
+} from '@multiversx/sdk-core';
 import { WrappedFarmTokenAttributes } from '../../attributes-decoder/proxy/wrappedFarm.token';
 import { GenericToken } from '../../generic.token';
 import { RewardsProxyEvent } from './rewardsProxy.event';

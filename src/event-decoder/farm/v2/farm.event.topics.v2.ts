@@ -1,4 +1,4 @@
-import { Address } from '@multiversx/sdk-core/out';
+import { Address } from '@multiversx/sdk-core';
 import { FarmEventsTopicsTypeV2 } from './farm.v2.types';
 
 export class FarmEventsTopicsV2 {
