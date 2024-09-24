@@ -6,7 +6,7 @@ import {
     StructType,
     TokenIdentifierType,
     U64Type,
-} from '@multiversx/sdk-core/out';
+} from '@multiversx/sdk-core';
 import { FarmTokenAttributesV1_3 } from '../../../attributes-decoder/farm/farm.v1.3.token';
 import { RawEventType } from '../../generic.types';
 import { BaseRewardsEvent } from '../rewards.base.event';

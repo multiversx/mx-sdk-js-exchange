@@ -4,7 +4,7 @@ import {
     StructType,
     TokenIdentifierType,
     U64Type,
-} from '@multiversx/sdk-core/out';
+} from '@multiversx/sdk-core';
 import { LockedLpTokenType } from './simple.lock.token.types';
 
 export class LockedLpTokenAttributes {

@@ -4,7 +4,7 @@ import {
     FieldDefinition,
     StructType,
     U64Type,
-} from '@multiversx/sdk-core/out';
+} from '@multiversx/sdk-core';
 import { DualYieldTokenType } from './dual.yield.token.types';
 
 export class DualYieldTokenAttributes {

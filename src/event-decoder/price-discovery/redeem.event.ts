@@ -4,7 +4,7 @@ import {
     StructType,
     TokenIdentifierType,
     U64Type,
-} from '@multiversx/sdk-core/out';
+} from '@multiversx/sdk-core';
 import BigNumber from 'bignumber.js';
 import { GenericToken } from '../../generic.token';
 import { RawEventType } from '../generic.types';

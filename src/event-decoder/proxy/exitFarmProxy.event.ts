@@ -7,7 +7,7 @@ import {
     StructType,
     TokenIdentifierType,
     U64Type,
-} from '@multiversx/sdk-core/out';
+} from '@multiversx/sdk-core';
 import { WrappedFarmTokenAttributes } from '../../attributes-decoder/proxy/wrappedFarm.token';
 import { ErrInvalidDataField } from '../../errors';
 import { GenericToken } from '../../generic.token';

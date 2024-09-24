@@ -1,4 +1,4 @@
-import { Address } from '@multiversx/sdk-core/out';
+import { Address } from '@multiversx/sdk-core';
 import { Energy, EnergyType } from '../../attributes-decoder';
 
 export class UserWeeklyRewardsSplittingEventTopics {

@@ -5,7 +5,7 @@ import {
     FieldDefinition,
     StructType,
     TokenIdentifierType,
-} from '@multiversx/sdk-core/out';
+} from '@multiversx/sdk-core';
 import { ErrInvalidDataField } from '../../errors';
 import { GenericEvent } from '../generic.event';
 import { RawEventType } from '../generic.types';

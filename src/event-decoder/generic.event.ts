@@ -1,4 +1,4 @@
-import { Address } from '@multiversx/sdk-core/out';
+import { Address } from '@multiversx/sdk-core';
 import BigNumber from 'bignumber.js';
 import { GenericEventType, RawEventType } from './generic.types';
 import { RawEvent } from './raw.event';

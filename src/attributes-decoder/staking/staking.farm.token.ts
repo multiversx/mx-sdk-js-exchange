@@ -3,7 +3,7 @@ import {
     BinaryCodec,
     FieldDefinition,
     StructType,
-} from '@multiversx/sdk-core/out';
+} from '@multiversx/sdk-core';
 import {
     StakingFarmTokenAttributesType,
     StakingFarmTokenType,

@@ -1,4 +1,4 @@
-import { BinaryCodec, StructType } from '@multiversx/sdk-core/out';
+import { BinaryCodec, StructType } from '@multiversx/sdk-core';
 import BigNumber from 'bignumber.js';
 import { ErrInvalidDataField } from '../../errors';
 import { GenericToken } from '../../generic.token';

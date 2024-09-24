@@ -1,8 +1,4 @@
-import {
-    BinaryCodec,
-    FieldDefinition,
-    StructType,
-} from '@multiversx/sdk-core/out';
+import { BinaryCodec, FieldDefinition, StructType } from '@multiversx/sdk-core';
 import { Energy } from '../../attributes-decoder/energy/energy';
 import { ErrInvalidDataField } from '../../errors';
 import { RawEventType } from '../generic.types';

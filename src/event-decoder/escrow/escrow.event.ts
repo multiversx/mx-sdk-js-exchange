@@ -6,7 +6,7 @@ import {
     ListType,
     StructType,
     U64Type,
-} from '@multiversx/sdk-core/out';
+} from '@multiversx/sdk-core';
 import { ErrInvalidDataField } from '../../errors';
 import { RawEventType } from '../generic.types';
 import { RawEvent } from '../raw.event';
