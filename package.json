@@ -1,6 +1,6 @@
 {
     "name": "@multiversx/sdk-exchange",
-    "version": "0.2.21",
+    "version": "0.2.22",
     "description": "Utilities modules for xExchange interactions",
     "author": "MultiversX",
     "repository": {
