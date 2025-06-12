@@ -40,6 +40,7 @@ export enum METABONDING_EVENTS {
 export enum ROUTER_EVENTS {
     CREATE_PAIR = 'create_pair',
     PAIR_SWAP_ENABLED = 'pairSwapEnabled',
+    MULTI_PAIR_SWAP = 'multiPairSwap'
 }
 
 export enum TRANSACTION_EVENTS {
