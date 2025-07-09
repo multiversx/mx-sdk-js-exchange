@@ -88,6 +88,10 @@ export enum GOVERNANCE_EVENTS {
     ABSTAIN = "abstainVoteCast",
 }
 
+export enum COMPOSABLE_TASKS_EVENTS {
+  SMART_SWAP = 'SmartSwap'
+}
+
 export type RawEventType = {
     address: string | undefined;
     identifier: string | undefined;
