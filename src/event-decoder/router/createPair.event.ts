@@ -1,4 +1,5 @@
 import {
+    Address,
     AddressType,
     BinaryCodec,
     FieldDefinition,
@@ -11,14 +12,16 @@ import { GenericEvent } from '../generic.event';
 import { RawEventType } from '../generic.types';
 import { RouterEventTopics } from './createPair.topics';
 import { CreatePairEventType } from './router.types';
+import BigNumber from 'bignumber.js';
 
 export class CreatePairEvent extends GenericEvent {
     private decodedTopics: RouterEventTopics;
 
     private firstTokenID: string | undefined;
     private secondTokenID: string | undefined;
-    private totalFeePercent: number | undefined;
-    private specialFeePercent: number | undefined;
+    private totalFeePercent: BigNumber | undefined;
+    private specialFeePercent: BigNumber | undefined;
+    private pairAddress: Address | undefined;
 
     constructor(init: RawEventType) {
         super(init);
@@ -36,8 +39,9 @@ export class CreatePairEvent extends GenericEvent {
             ...super.toJSON(),
             firstTokenID: this.firstTokenID,
             secondTokenID: this.secondTokenID,
-            totalFeePercent: this.totalFeePercent,
-            specialFeePercent: this.specialFeePercent,
+            totalFeePercent: this.totalFeePercent?.toNumber(),
+            specialFeePercent: this.specialFeePercent?.toNumber(),
+            pairAddress: this.pairAddress?.toBech32(),
         };
     }
 
@@ -62,7 +66,7 @@ export class CreatePairEvent extends GenericEvent {
             new FieldDefinition('secondTokenID', '', new TokenIdentifierType()),
             new FieldDefinition('totalFeePercent', '', new U64Type()),
             new FieldDefinition('specialFeePercent', '', new U64Type()),
-            new FieldDefinition('address', '', new AddressType()),
+            new FieldDefinition('pairAddress', '', new AddressType()),
             new FieldDefinition('block', '', new U64Type()),
             new FieldDefinition('epoch', '', new U64Type()),
             new FieldDefinition('timestamp', '', new U64Type()),
