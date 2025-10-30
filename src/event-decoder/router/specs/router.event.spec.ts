@@ -34,7 +34,6 @@ describe('test router events decoder', () => {
 
     it('should decode create pair event', () => {
         const createPairEvent = new CreatePairEvent(rawCreatePairEvent);
-        console.log(createPairEvent.toJSON());
         expect(createPairEvent.toJSON()).toEqual({
             address:
                 'erd1qqqqqqqqqqqqqpgqa7hv0nahgsl8tz0psat46x0tchm0wuyc0n4s6q28ad',
