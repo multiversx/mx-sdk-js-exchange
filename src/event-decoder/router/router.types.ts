@@ -6,6 +6,7 @@ export type CreatePairEventType = GenericEventType & {
     secondTokenID: string | undefined;
     totalFeePercent: number | undefined;
     specialFeePercent: number | undefined;
+    pairAddress: string | undefined;
 };
 
 export type PairSwapEnableEventType = {
