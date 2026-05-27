@@ -18,7 +18,7 @@ import { SmartSwapEventType } from './composable.tasks.types';
 export class SmartSwapEvent extends GenericEvent {
     private decodedTopics: SmartSwapEventTopics;
 
-    protected readonly caller: Address;
+    protected readonly declare caller: Address;
     private readonly tokenInID: string;
     private readonly amountIn: BigNumber;
     private readonly tokenOutID: string;

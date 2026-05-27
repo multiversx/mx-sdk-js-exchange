@@ -52,7 +52,7 @@ export class ClaimMultiEvent extends RawEvent {
         const data = Buffer.from(this.data, 'base64');
         const codec = new BinaryCodec();
 
-        let decoded = codec.decodeTopLevel(
+        const decoded = codec.decodeTopLevel(
             data,
             new ListType(EsdtTokenPayment.getStructure()),
         );

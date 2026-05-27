@@ -18,7 +18,7 @@ export class AddLiquidityProxyEvent extends PairProxyEvent {
     constructor(init: RawEventType) {
         super(init);
         const decodedEvent = this.decodeEvent();
-        Object.assign(this.decodeEvent);
+        Object.assign(this, decodedEvent);
         this.wrappedLpAttributes =
             WrappedLpTokenAttributes.fromDecodedAttributes(
                 decodedEvent.wrappedLpAttributes,

@@ -10,7 +10,7 @@ export class Err extends Error {
      * Returns a pretty, friendly summary for the error or for the chain of errros (if appropriate).
      */
     summary(): any[] {
-        let result = [];
+        const result = [];
 
         result.push({ name: this.name, message: this.message });
 
