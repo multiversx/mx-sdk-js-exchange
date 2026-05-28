@@ -30,7 +30,7 @@ export class FarmEventsTopics {
     toPlainObject() {
         return {
             eventName: this.eventName,
-            caller: this.caller.bech32(),
+            caller: this.caller.toBech32(),
             tokenID: this.tokenID,
             lockedRewards: this.lockedRewards,
             epoch: this.epoch,

@@ -28,7 +28,7 @@ export class GovernanceEventTopics {
     toJSON() {
         return {
             eventName: this.eventName,
-            voter: this.voter.bech32(),
+            voter: this.voter.toBech32(),
             proposalId: this.proposalId,
             nrVotes: this.nrVotes,
             quorumUsed: this.quorumUsed,

@@ -19,7 +19,7 @@ export class UpdateUserEnergyEvent extends RawEvent {
 
     toJSON(): UpdateUserEnergyEventType {
         return {
-            caller: this.decodedTopics.caller.bech32(),
+            caller: this.decodedTopics.caller.toBech32(),
             currentWeek: this.decodedTopics.currentWeek,
             energy: this.decodedTopics.energy
         };

@@ -14,14 +14,13 @@ import { GenericEvent } from '../generic.event';
 import { RawEventType } from '../generic.types';
 import { EsdtTokenPayment } from '../../attributes-decoder';
 import { MultiPairSwapEventTopics } from './multiPairSwap.topics';
-import { RawEvent } from '../raw.event';
 import BigNumber from 'bignumber.js';
 import { MultiPairSwapEventType } from './router.types';
 
 export class MultiPairSwapEvent extends GenericEvent {
     private decodedTopics: MultiPairSwapEventTopics;
 
-    protected readonly caller: Address;
+    protected readonly declare caller: Address;
     private readonly tokenInID: string;
     private readonly amountIn: BigNumber;
     private readonly tokenOutID: string;

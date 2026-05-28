@@ -37,7 +37,7 @@ export class ClaimMultiEvent extends RawEvent {
 
     toJSON(): ClaimMultiEventType {
         return {
-            caller: this.decodedTopics.caller.bech32(),
+            caller: this.decodedTopics.caller.toBech32(),
             currentWeek: this.decodedTopics.currentWeek,
             energy: this.decodedTopics.energy,
             allPayments: this.allPayments,
@@ -52,7 +52,7 @@ export class ClaimMultiEvent extends RawEvent {
         const data = Buffer.from(this.data, 'base64');
         const codec = new BinaryCodec();
 
-        let decoded = codec.decodeTopLevel(
+        const decoded = codec.decodeTopLevel(
             data,
             new ListType(EsdtTokenPayment.getStructure()),
         );

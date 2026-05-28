@@ -23,7 +23,7 @@ export class PairEventTopics {
             eventName: this.eventName,
             firstTokenID: this.firstTokenID,
             secondTokenID: this.secondTokenID,
-            caller: this.caller.bech32(),
+            caller: this.caller.toBech32(),
             epoch: this.epoch,
         };
     }
@@ -49,7 +49,7 @@ export class SwapNoFeeTopics {
         return {
             eventName: this.eventName,
             tokenOutID: this.tokenOutID,
-            caller: this.caller.bech32(),
+            caller: this.caller.toBech32(),
             epoch: this.epoch,
         };
     }

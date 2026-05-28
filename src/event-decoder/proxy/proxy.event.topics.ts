@@ -23,10 +23,10 @@ export class PairProxyTopics {
     toPlainObject() {
         return {
             eventName: this.eventName,
-            caller: this.caller.bech32(),
+            caller: this.caller.toBech32(),
             firstTokenID: this.firstTokenID,
             secondTokenID: this.secondTokenID,
-            pairAddress: this.pairAddress.bech32(),
+            pairAddress: this.pairAddress.toBech32(),
             epoch: this.epoch,
         };
     }
@@ -54,8 +54,8 @@ export class FarmProxyTopics {
         return {
             eventName: this.eventName,
             tokenID: this.tokenID,
-            caller: this.caller.bech32(),
-            farmAddress: this.farmAddress.bech32(),
+            caller: this.caller.toBech32(),
+            farmAddress: this.farmAddress.toBech32(),
             epoch: this.epoch,
         };
     }

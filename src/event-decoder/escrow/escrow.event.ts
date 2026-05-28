@@ -60,8 +60,8 @@ class EscrowBaseEvent extends RawEvent {
 
     toJSON(): EscrowBaseEventType {
         return {
-            sender: this.sender.bech32(),
-            receiver: this.receiver.bech32(),
+            sender: this.sender.toBech32(),
+            receiver: this.receiver.toBech32(),
             lockedFunds: this.lockedFunds.toJSON(),
         };
     }
