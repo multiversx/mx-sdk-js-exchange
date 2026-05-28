@@ -20,6 +20,8 @@ jobs:
             - run: npm ci
 
             - name: Create release
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
               run: |
                   echo " - [npmjs](https://www.npmjs.com/package/@multiversx/sdk-exchange)" >> notes.txt
                   echo "" >> notes.txt
