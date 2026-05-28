@@ -33,7 +33,7 @@
         "typescript-eslint": "^8.59.4"
     },
     "dependencies": {
-        "@multiversx/sdk-core": "^13.6.3",
-        "bignumber.js": "9.0.1"
+        "@multiversx/sdk-core": "^15.4.1",
+        "bignumber.js": "^9.3.1"
     }
 }
