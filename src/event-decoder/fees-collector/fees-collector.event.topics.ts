@@ -20,7 +20,7 @@ export class FeesCollectorEventTopics {
     toJSON() {
         return {
             eventName: this.eventName,
-            caller: this.caller.bech32(),
+            caller: this.caller.toBech32(),
             payment: this.payment.toJSON(),
             currentWeek: this.currentWeek,
         };

@@ -36,7 +36,7 @@ export class SmartSwapEventTopics {
             amountIn: this.amountIn,
             tokenOutID: this.tokenOutID,
             amountOut: this.amountOut,
-            caller: this.caller.bech32(),
+            caller: this.caller.toBech32(),
             epoch: this.epoch,
         };
     }

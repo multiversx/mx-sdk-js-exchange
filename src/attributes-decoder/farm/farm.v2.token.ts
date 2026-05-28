@@ -24,7 +24,7 @@ export class FarmTokenAttributesV2 extends FarmTokenAttributes {
     ): FarmTokenAttributesV2 {
         return new FarmTokenAttributesV2({
             ...super.fromDecodedAttributes(decodedAttributes).toJSON(),
-            originalOwner: decodedAttributes.originalOwner.bech32(),
+            originalOwner: decodedAttributes.originalOwner.toBech32(),
         });
     }
 

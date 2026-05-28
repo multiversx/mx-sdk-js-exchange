@@ -34,10 +34,10 @@ export class PairSwapEnabledEvent extends RawEvent {
 
     toJSON(): PairSwapEnableEventType {
         return {
-            caller: this.caller.bech32(),
+            caller: this.caller.toBech32(),
             firstTokenID: this.firstTokenID,
             secondTokenID: this.secondTokenID,
-            pairAddress: this.pairAddress.bech32(),
+            pairAddress: this.pairAddress.toBech32(),
         };
     }
 

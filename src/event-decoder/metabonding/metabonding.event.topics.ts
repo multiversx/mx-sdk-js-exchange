@@ -12,7 +12,7 @@ export class MetabondingEventTopics {
     toJSON() {
         return {
             eventName: this.eventName,
-            caller: this.caller.bech32(),
+            caller: this.caller.toBech32(),
         };
     }
 

@@ -28,7 +28,7 @@ export class UserUnlockedTokensTopics {
     toJSON(): UnlockedTokensTopicsType {
         return {
             eventName: this.eventName,
-            caller: this.caller.bech32(),
+            caller: this.caller.toBech32(),
             block: this.block,
             epoch: this.epoch,
             timestamp: this.timestamp,

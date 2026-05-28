@@ -45,7 +45,7 @@ export class MetabondingEvent extends RawEvent {
     toJSON(): MetabondingEventType {
         return {
             address: this.address,
-            caller: this.caller?.bech32(),
+            caller: this.caller?.toBech32(),
             identifier: this.identifier,
             userEntry: this.userEntry?.toJSON(),
         };

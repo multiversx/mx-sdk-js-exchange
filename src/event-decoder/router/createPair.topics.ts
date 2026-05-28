@@ -23,7 +23,7 @@ export class RouterEventTopics {
             eventName: this.eventName,
             firstTokenID: this.firstTokenID,
             secondTokenID: this.secondTokenID,
-            caller: this.caller.bech32(),
+            caller: this.caller.toBech32(),
             epoch: this.epoch,
         };
     }

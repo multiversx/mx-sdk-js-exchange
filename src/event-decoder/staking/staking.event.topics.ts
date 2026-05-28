@@ -30,7 +30,7 @@ export class StakingEventsTopics {
     toJSON(): StakingEventsTopicsType {
         return {
             eventName: this.eventName,
-            caller: this.caller.bech32(),
+            caller: this.caller.toBech32(),
             epoch: this.epoch,
             block: this.block,
             timestamp: this.timestamp,
