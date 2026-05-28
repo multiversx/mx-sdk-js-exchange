@@ -1,6 +1,6 @@
 {
     "name": "@multiversx/sdk-exchange",
-    "version": "0.2.24",
+    "version": "0.3.0",
     "description": "Utilities modules for xExchange interactions",
     "author": "MultiversX",
     "repository": {
@@ -35,5 +35,9 @@
     "dependencies": {
         "@multiversx/sdk-core": "^15.4.1",
         "bignumber.js": "^9.3.1"
-    }
+    },
+    "publishConfig": {
+        "access": "public",
+        "provenance": true
+  }
 }
